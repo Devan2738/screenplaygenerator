@@ -4,5 +4,4 @@
     <a href="commonquestions.php">common questions></a>
     <a href="aboutus.php">about us</a>
   </li>
-  </body>
-</html>
+</body>
