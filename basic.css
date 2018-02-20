@@ -56,7 +56,7 @@ body {
 #backmostDiv {
   background-color: #003366;
   width: 100%;
-  height: 100%;
+  height: available;
   margin: 1px 1px 1px 1px;
   padding: 1px 1px 1px 1px;
 }
@@ -64,7 +64,7 @@ body {
 #onTopOfBackDiv {
   background-color: #e7ebf0;
   width: available;
-  height: available%;
+  height: available;
   margin: 8px;
   padding: 0 6px;
 }
