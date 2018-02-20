@@ -12,12 +12,14 @@ h1 {
   font-size: 10px;
   list-style:none;
   display:inline;
+  padding: 0 10px;
 }
 
 .footerLinks {
   font-size: 8px;
   list-style:none;
   display:inline;
+  padding: 0 8px;
 }
 
 p {
