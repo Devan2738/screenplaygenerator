@@ -43,8 +43,13 @@ p {
   text-align: center;
 }
 
+body {
+  background-color: #003366;
+}
+
 #backmostDiv {
   background-color: #003366;
   width: 100%;
   height: 100%;
+  margin: 0;
 }
