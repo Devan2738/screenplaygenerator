@@ -68,7 +68,7 @@ body {
 #onTopOfBackDiv {
   background-color: #e7ebf0;
   width: available;
-  height: available;
+  height: 980px;
   margin: 8px;
   padding: 0 6px;
 }
