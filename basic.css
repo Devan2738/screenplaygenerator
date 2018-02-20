@@ -58,12 +58,10 @@ body {
 }
 
 #footerContainer {
-  position:relative;
-}
-
-#footerLinks{
+  margin: auto;
+  padding-left: 35%;
+  bottom:0px;
   position: absolute;
-  bottom: 0;
 }
 
 #backmostDiv {
@@ -77,7 +75,8 @@ body {
 #onTopOfBackDiv {
   background-color: #e7ebf0;
   width: available;
-  height: 980px;
+  position:relative;
+  height: 962px;
   margin: 8px;
   padding: 0 6px;
 }
