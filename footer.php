@@ -1,4 +1,3 @@
-<?php>
         <li id="footerLinks" class="horizontalLinks">
           <a href="contactus.php">contact us</a>
           <a href="careers.php">careers</a>
@@ -8,4 +7,4 @@
       </div>
     </div>
   </body>
-</php>
+</html>
