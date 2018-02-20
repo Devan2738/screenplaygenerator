@@ -1,4 +1,4 @@
-        <ul id="footerLinks" class="horizontalLinks">
+        <ul class="horizontalLinks">
           <li>
             <a href="contactus.php">contact us</a>
           </li>

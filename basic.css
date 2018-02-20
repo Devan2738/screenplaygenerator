@@ -1,27 +1,10 @@
 .horizontalLinks {
   text-align: center;
-  display: inline;
-  list-style: none;
+  display:inline;
+  list-style:none;
 }
 
-#headerLinks {
-  font-size: 14;
-  padding: 6 12px;
-}
-
-#footerLinks {
-  font-size: 10;
-  padding: 0 6px;
-}
-
-#firstBackgroundDiv {
-  color: #003366;
-  padding: 1%;
-  width: 100%
-}
-
-#secondBackgroundDiv {
-  color: #B1BDCD;
-  padding: 3%;
-  width: 95%
+body {
+  background-color: #B1BDCD;
+  text-color: #003366;
 }

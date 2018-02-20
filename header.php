@@ -13,7 +13,7 @@
           <a href="homepage.php">homepage</a>
           </li>
         </ul>
-        <ul id="headerLinks" class="horizontalLinks">
+        <ul class="horizontalLinks">
           <li>
             <a href="discover.php">discover screenplays</a>
           </li>
