@@ -4,7 +4,7 @@
           <li class="footerLinks"><a href="commonquestions.php">common questions</a></li>
           <li class="footerLinks"><a href="aboutus.php">about us</a></li>
         </ul>
-      <!--</div>
-    </div>-->
+      </div>
+    </div>
   </body>
 </html>
