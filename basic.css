@@ -1,6 +1,15 @@
+ul {
+    text-align: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    align-items: center;
+}
+
 .headerLinks {
   font-size: 10px;
-  text-align: center;
   list-style:none;
   display:inline;
 }
@@ -13,6 +22,7 @@
 
 p {
   color: #003366;
+  text-align: center;
 }
 
 body {

@@ -8,6 +8,7 @@
   <body>
     <!--<div id="firstBackgroundDiv" class="">
       <div id="secondBackgroundDiv" class="">-->
+        <h1>Screenplay Generator</h1>
         <ul>
           <li class="headerLinks"><a href="discover.php">discover screenplays</a></li>
           <li class="headerLinks"><a href="generate.php">generate screenplays</a></li>
