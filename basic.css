@@ -6,8 +6,22 @@
 
 #headerLinks {
   font-size: 14;
+  padding: 6 12px;
 }
 
 #footerLinks {
   font-size: 10;
+  padding: 0 6px;
+}
+
+#firstBackgroundDiv {
+  color: #003366;
+  padding: 1%;
+  width: 100%
+}
+
+#secondBackgroundDiv {
+  color: #B1BDCD;
+  padding: 3%;
+  width: 95%
 }
