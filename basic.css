@@ -2,9 +2,13 @@
   text-align: center;
   display:inline;
   list-style:none;
+  color: #003366;
 }
 
 body {
   background-color: #B1BDCD;
-  text-color: #003366;
+}
+
+a:visited {
+  text-decoration: none;
 }
