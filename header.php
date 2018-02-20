@@ -6,10 +6,10 @@
     <title>$pageName</title>
   </head>
   <body>
-    <div id="firstBackgroundDiv" class="">
-      <div id="secondBackgroundDiv" class="">
+    <!--<div id="firstBackgroundDiv" class="">
+      <div id="secondBackgroundDiv" class="">-->
         <li>
-          <a href="homepage.php">homepage</a>
+          <a href="homepage.php" class="horizontalLinks">homepage</a>
         </li>
         <li id="headerLinks" class="horizontalLinks">
           <a href="discover.php">discover screenplays</a>
