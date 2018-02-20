@@ -1,6 +1,6 @@
 <body>
-  <p>it worked</p>
-  <li>
+  <div class="">
+  <li id="headerLinks" class="horizontalLinks">
     <a href="homepage.php">homepage</a>
     <a href="discover.php">discover screenplays</a>
     <a href="generate.php">generate screenplays</a>

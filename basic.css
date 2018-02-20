@@ -1,4 +1,13 @@
-li {
+.horizontalLinks {
+  text-align: center;
   display: inline;
   list-style: none;
+}
+
+#headerLinks {
+  font-size: 14;
+}
+
+#footerLinks {
+  font-size: 10;
 }
