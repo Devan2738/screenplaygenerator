@@ -57,6 +57,15 @@ body {
   margin: 24px 0px;
 }
 
+#footerContainer {
+  position:relative;
+}
+
+#footerLinks{
+  position: absolute;
+  bottom: 0;
+}
+
 #backmostDiv {
   background-color: #003366;
   width: 100%;
