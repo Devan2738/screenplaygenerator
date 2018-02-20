@@ -53,10 +53,14 @@ body {
   margin: 0;
 }
 
+#careerBody {
+  margin: 24px 0px;
+}
+
 #backmostDiv {
   background-color: #003366;
   width: 100%;
-  height: available;
+  height: 980px;
   margin: 1px 1px 1px 1px;
   padding: 1px 1px 1px 1px;
 }
