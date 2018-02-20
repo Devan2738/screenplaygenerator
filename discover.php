@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="basic.css">
     <title>discover</title>
   </head>
     <?php
