@@ -2,13 +2,13 @@
   text-align: center;
   display:inline;
   list-style:none;
+  text-decoration: none;
+}
+
+p {
   color: #003366;
 }
 
 body {
   background-color: #B1BDCD;
-}
-
-a:visited {
-  text-decoration: none;
 }
