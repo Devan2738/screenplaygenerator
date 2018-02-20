@@ -1,12 +1,14 @@
-<?php>
-  $pageName = 'test';
-  require_once('header.php');
-  ?>
-<div id="backmostDiv">
-  <p>
-    test
-  </p>
-</div>
-<?php
-  require_once('footer.php');
-  ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <div id="backmostDiv">
+      <div id="onTopOfBackDiv">
+        
+      </div>
+    </div>
+  </body>
+</html>
