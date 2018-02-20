@@ -3,16 +3,12 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="basic.css">
-    <title>$pageName</title>
+    <title><?php$pageName?></title>
   </head>
   <body>
     <!--<div id="firstBackgroundDiv" class="">
       <div id="secondBackgroundDiv" class="">-->
-        <h1>Screenplay Generator</h1>
-        <?php
-          echo $pageName;
-          echo "one";
-          ?>
+        <h1>   Screenplay Generator</h1>
         <ul>
           <li class="headerLinks"><a href="discover.php">discover screenplays</a></li>
           <li class="headerLinks"><a href="generate.php">generate screenplays</a></li>
