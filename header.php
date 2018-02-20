@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="basic.css">
-    <title><?php$pageName?></title>
+    <title><?php $pageName ?></title>
   </head>
   <body>
     <!--<div id="firstBackgroundDiv" class="">
