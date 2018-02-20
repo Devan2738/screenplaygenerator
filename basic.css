@@ -1,8 +1,17 @@
+ul {
+  align-items: center;
+}
+
 .horizontalLinks {
+  font-size: 12;
   text-align: center;
   display:inline;
   list-style:none;
   text-decoration: none;
+}
+
+#footerLinks {
+  font-size: 8;
 }
 
 p {
