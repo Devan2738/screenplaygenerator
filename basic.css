@@ -42,7 +42,7 @@ a:visited {
 }
 
 .footerLinks {
-  font-size: 8px;
+  font-size: 12px;
   list-style:none;
   display:inline;
   padding: 0 8px;
@@ -64,14 +64,14 @@ body {
 
 #footerContainer {
   margin: auto;
-  padding-left: 35%;
-  bottom:0px;
+  padding-left: 40%;
+  bottom: 0px;
   position: absolute;
 }
 
 #backmostDiv {
   background-color: #003366;
-  width: 100%;
+  width: available;
   height: 980px;
   margin: 1px 1px 1px 1px;
   padding: 1px 1px 1px 1px;
@@ -80,8 +80,8 @@ body {
 #onTopOfBackDiv {
   background-color: #e7ebf0;
   width: available;
-  position:relative;
-  height: 952px;
+  position: relative;
+  height: 95%;
   margin: 8px;
-  padding: 0 6px;
+  padding: 0px 16px 12px 16px;;
 }

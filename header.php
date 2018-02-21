@@ -12,10 +12,10 @@
   <body>
     <div id="backmostDiv">
       <div id="onTopOfBackDiv">
-      <h1>Screenplay Generator</h1>
-      <ul>
-        <li class="headerLinks"><a href="discover.php">discover screenplays</a></li>
-        <li class="headerLinks"><a href="generate.php">generate screenplays</a></li>
-        <li class="headerLinks"><a href="science.php">show me the science</a></li>
-        <li class="headerLinks"><a href="signinsignup.php">sign in / sign up</a></li>
-      </ul>
+        <h1>Screenplay Generator</h1>
+          <ul>
+            <li class="headerLinks"><a href="discover.php">discover screenplays</a></li>
+            <li class="headerLinks"><a href="generate.php">generate screenplays</a></li>
+            <li class="headerLinks"><a href="science.php">show me the science</a></li>
+            <li class="headerLinks"><a href="signinsignup.php">sign in / sign up</a></li>
+          </ul>
