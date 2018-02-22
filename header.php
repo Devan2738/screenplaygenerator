@@ -12,7 +12,7 @@
   <body>
     <div id="backmostDiv">
       <div id="onTopOfBackDiv">
-        <h1>Screenplay Generator</h1>
+        <h1>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
           <ul>
             <li class="headerLinks"><a href="discover.php">discover screenplays</a></li>
             <li class="headerLinks"><a href="generate.php">generate screenplays</a></li>
