@@ -1,7 +1,6 @@
 ul {
-    text-align: center;
-    align-items: center;
-    margin-bottom: 10px;
+    margin: auto;
+    text-align: left;
     padding: 0px;
 }
 
@@ -10,6 +9,10 @@ ul {
   font-size: 14;
   margin: 5% 5% 5% 5%;
 
+}
+
+#linksInTheHeader {
+  margin: auto;
 }
 
 #aboutUsPage > p {
@@ -68,10 +71,11 @@ a:visited {
 }
 
 .footerLinks {
-  font-size: 18px;
+  font-size: 24px;
   list-style:none;
   display:inline;
   padding: 0 8px;
+  margin: auto;
 }
 
 p {
@@ -101,7 +105,7 @@ body {
   position: absolute;
 }
 
-#backmostDiv {
+#backgroundBorder {
   background-color: #003366;
   width: available;
   height: 1510px;
@@ -111,6 +115,7 @@ body {
 
 #onTopOfBackDiv {
   background-color: #e7ebf0;
+  text-align: center;
   width: available;
   position: relative;
   height: 1440px;
