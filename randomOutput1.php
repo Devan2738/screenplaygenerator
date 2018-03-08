@@ -1,9 +1,34 @@
 <?php
   $pageName = 'testing';
   require_once('header.php');
-  require_once "Dao.php";
-  $dao = new Dao();
-  echo 'hello from random output 1 .php';
-  $words = $dao->getWords();
+  #require_once "Dao.php";
+  #$dao = new Dao();
+  #echo 'hello from random output 1 .php';
+  #$words = $dao->getWords();
+
+
+  $hostname = "us-cdbr-iron-east-05.cleardb.net";
+  $db = "heroku_d66a31f2e552f3e";
+  $user = "b2cf23ed5d39cc";
+  $password = "f49471ca";
+
+  $con=mysqli_connect($hostname,$user,$password,$db);
+  // Check connection
+  if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+  $sql="SELECT word FROM words LIMIT 100";
+
+  if ($result=mysqli_query($con,$sql)) {
+    while ($obj=mysqli_fetch_object($result)) {
+      #printf("%s\n",$obj->word);
+      echo $obj->word;
+    }
+    // Free result set
+    mysqli_free_result($result);
+  }
+  mysqli_close($con);
+
+
   require_once('footer.php');
 ?>
