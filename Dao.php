@@ -1,7 +1,7 @@
 <?php
 class Dao {
 
-mysql://b007dde3ed6cbd:def99b02@us-cdbr-iron-east-05.cleardb.net/heroku_f36640796dba974?reconnect=true
+#mysql://b007dde3ed6cbd:def99b02@us-cdbr-iron-east-05.cleardb.net/heroku_f36640796dba974?reconnect=true
 
  private $host = "us-cdbr-iron-east-05.cleardb.net";
  private $db = "heroku_f36640796dba974"; # private $db = "heroku_d66a31f2e552f3e";
