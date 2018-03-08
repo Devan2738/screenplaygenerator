@@ -8,7 +8,7 @@ class Dao {
  private $conn;
 
  public function __construct() {
-   $this->conn = mysqli_connect($hostname,$user,$password,$db);
+   $this->conn = mysqli_connect($this->hostname,$this->user,$this->password,$this->db);
    // Check connection
    if (mysqli_connect_errno()) {
      echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -17,7 +17,7 @@ class Dao {
 
  public function getPronoun() {
    $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
-   if ($result=mysqli_query($conn,$sql)) {
+   if ($result=mysqli_query($this->conn,$sql)) {
      $obj=mysqli_fetch_object($result)
      mysqli_free_result($result);
      return $obj->word;
@@ -26,7 +26,7 @@ class Dao {
 
  public function getVerb() {
    $sql="SELECT word FROM words WHERE isVerb = 1 ORDER BY RAND() LIMIT 1";
-   if ($result=mysqli_query($conn,$sql)) {
+   if ($result=mysqli_query($this->conn,$sql)) {
      $obj=mysqli_fetch_object($result)
      mysqli_free_result($result);
      return $obj->word;
@@ -35,7 +35,7 @@ class Dao {
 
  public function getNoun() {
    $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
-   if ($result=mysqli_query($conn,$sql)) {
+   if ($result=mysqli_query($this->conn,$sql)) {
      $obj=mysqli_fetch_object($result)
      mysqli_free_result($result);
      return $obj->word;
@@ -43,7 +43,7 @@ class Dao {
  }
 
  public function close() {
-     mysqli_close($conn);
+     mysqli_close($this->conn);
  }
 
 }
