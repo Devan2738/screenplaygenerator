@@ -16,10 +16,7 @@ class Dao {
 
  public function getWords() {
      $conn = $this->getConnection();
-     $getQuery = "SELECT * FROM words LIMIT 100";
-     $q = $conn->prepare($getQuery);
-     $q->execute();
-     return reset($q->fetchAll());
+     return $conn->query("SELECT * FROM words LIMIT 100");
    }
 
 }
