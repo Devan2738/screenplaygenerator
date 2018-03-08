@@ -8,7 +8,7 @@
 <p>something from database:
   <?php
     $dao = new Dao();
-    echo $dao->getWordsByFirstChar('a');
+    echo $dao->getWords();
   ?>
 </p>
 <?php

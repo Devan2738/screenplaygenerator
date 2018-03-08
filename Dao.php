@@ -1,7 +1,7 @@
 <?php
 class Dao {
  private $host = "us-cdbr-iron-east-05.cleardb.net";
- private $db = "heroku_f36640796dba974"; # private $db = "heroku_d66a31f2e552f3e"; 
+ private $db = "heroku_f36640796dba974"; # private $db = "heroku_d66a31f2e552f3e";
  private $user = "b007dde3ed6cbd"; #private $user = "b2cf23ed5d39cc";
  private $pass = "def99b02"; #private $pass = "f49471ca";
 
@@ -16,9 +16,9 @@ class Dao {
       }
  }
 
- public function getWordsByFirstChar ($firstChar) {
+ public function getWords() {
      $conn = $this->getConnection();
-     $getQuery = "SELECT * FROM words WHERE word = :^$firstChar";
+     $getQuery = "SELECT * FROM words;
      $q = $conn->prepare($getQuery);
      $q->bindParam(":firstChar", $firstChar);
      $q->execute();
