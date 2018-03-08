@@ -5,8 +5,6 @@ class Dao {
  private $user = "b007dde3ed6cbd"; #private $user = "b2cf23ed5d39cc";
  private $pass = "def99b02"; #private $pass = "f49471ca";
 
- public function __construct () { }
-
  public function getConnection () {
    try {
         $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
