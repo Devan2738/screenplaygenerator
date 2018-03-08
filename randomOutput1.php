@@ -7,13 +7,8 @@
 ?>
   <ul>
     <?php
-      echo "<p>testing</p>";
-      echo count($words);
-      array_push($words, "word");
-      echo count($words);
-      foreach ($words as $word) {
-        echo "<li> . $word . </li>";
-      } ?>
+      print_r($words);
+    ?>
   </ul>
 <?php
   require_once('footer.php');
