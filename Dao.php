@@ -12,25 +12,21 @@ class Dao {
  private $pass = "f49471ca";
  #mysql://b2cf23ed5d39cc:f49471ca@us-cdbr-iron-east-05.cleardb.net/heroku_d66a31f2e552f3e?reconnect=true
 
-#$url = parse_url(getenv("//b2cf23ed5d39cc:f49471ca@us-cdbr-iron-east-05.cleardb.net/heroku_d66a31f2e552f3e?reconnect=true"));
+ private $conn;
 
-#$server = $url["host"];
-#$username = $url["user"];
-#$password = $url["pass"];
-#$db = substr($url["path"], 1);
-
- public function getConnection () {
+ public function __construct() {
    try {
-        $conn = new mysqli($host, $user, $pass, $db);
-        return $conn;
+        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
       } catch (Exception $e) {
         echo "connection failed: " . $e->getMessage();
       }
  }
 
  public function getWords() {
-     $conn = $this->getConnection();
-     return $conn->query("SELECT * FROM words LIMIT 100");
+     $words = $this->conn->query('SELECT word FROM words LIMIT 100');
+     while ($word = $words->fetch_object()){
+       echo $word;
+     }
    }
 
 }
