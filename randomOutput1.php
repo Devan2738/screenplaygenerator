@@ -20,10 +20,12 @@
   $sql="SELECT word FROM words LIMIT 100";
 
   if ($result=mysqli_query($con,$sql)) {
+    echo "<p>";
     while ($obj=mysqli_fetch_object($result)) {
       #printf("%s\n",$obj->word);
-      echo $obj->word;
+      echo $obj->word . "\n";
     }
+    echo "</p>";
     // Free result set
     mysqli_free_result($result);
   }
