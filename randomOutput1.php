@@ -23,7 +23,8 @@
     echo "<p>";
     while ($obj=mysqli_fetch_object($result)) {
       #printf("%s\n",$obj->word);
-      echo $obj->word . "\n";
+      echo $obj->word . " ";
+      echo "\n";
     }
     echo "</p>";
     // Free result set
