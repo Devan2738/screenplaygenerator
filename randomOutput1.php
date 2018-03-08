@@ -6,9 +6,12 @@
   $words = $dao->getWords();
 ?>
   <ul>
-    <?php foreach ($words as $word) {
-      echo "<li> . $word . </li>";
-    } ?>
+    <?php
+      echo "<p>testing</p>";
+      echo count($words);
+      foreach ($words as $word) {
+        echo "<li> . $word . </li>";
+      } ?>
   </ul>
 <?php
   require_once('footer.php');
