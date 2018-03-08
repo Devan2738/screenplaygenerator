@@ -20,7 +20,6 @@ class Dao {
      $conn = $this->getConnection();
      $getQuery = "SELECT * FROM words;
      $q = $conn->prepare($getQuery);
-     $q->bindParam(":firstChar", $firstChar);
      $q->execute();
      return reset($q->fetchAll());
    }

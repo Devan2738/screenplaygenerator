@@ -8,7 +8,10 @@
 <p>something from database:
   <?php
     $dao = new Dao();
-    echo $dao->getWords();
+    $wordList = echo $dao->getWords();
+    for ($wordList as $word) {
+      echo "$word\n"
+    }
   ?>
 </p>
 <?php
