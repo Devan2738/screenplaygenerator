@@ -9,6 +9,8 @@
     <?php
       echo "<p>testing</p>";
       echo count($words);
+      array_push($words, "word");
+      echo count($words);
       foreach ($words as $word) {
         echo "<li> . $word . </li>";
       } ?>
