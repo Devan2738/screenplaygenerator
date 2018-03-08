@@ -24,7 +24,7 @@
     while ($obj=mysqli_fetch_object($result)) {
       #printf("%s\n",$obj->word);
       echo $obj->word . " ";
-      echo "\n";
+      echo "<br>";
     }
     echo "</p>";
     // Free result set
