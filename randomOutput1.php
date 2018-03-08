@@ -6,14 +6,14 @@
   $dao = new Dao();
 
   echo "<p>";
-  for ($x = 0; $x < 10; $x++) {
+  #for ($x = 0; $x < 10; $x++) {
     echo "hello good sir";
     $pronoun = $dao->getPronoun();
     $verb = $dao->getVerb();
     $noun = $dao->getNoun();
     echo strtoupper($pronoun) . " " . $verb . " " . $noun . ".";
     echo "<br>";
-  }
+  #}
   echo "</p>";
 
   $dao->close();
