@@ -10,7 +10,7 @@ class Dao {
 
  public function getConnection () {
    try {
-        $conn = new mysql($host, $username, $pass, $db);
+        $conn = new mysql($host, $user, $pass, $db);
         return $conn;
       } catch (Exception $e) {
         echo "connection failed: " . $e->getMessage();
