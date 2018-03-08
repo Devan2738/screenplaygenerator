@@ -24,6 +24,7 @@ class Dao {
 
  public function getWords() {
      $words = $this->conn->query('SELECT word FROM words LIMIT 100');
+     echo 'hey i\'m doing something here in dao.php';
      while ($word = $words->fetch_object()){
        echo $word;
      }
