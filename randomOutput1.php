@@ -5,6 +5,7 @@
   $dao = new Dao();
   $words = $dao->getWords();
 ?>
+  echo "<p>testing</p>";
   <ul>
     <?php
       print_r($words);
