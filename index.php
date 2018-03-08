@@ -1,4 +1,4 @@
-<?php>
+<?php
   $pageName = 'homepage';
   require_once('header.php');
   ?>
