@@ -1,5 +1,8 @@
 <?php
 class Dao {
+
+mysql://b007dde3ed6cbd:def99b02@us-cdbr-iron-east-05.cleardb.net/heroku_f36640796dba974?reconnect=true
+
  private $host = "us-cdbr-iron-east-05.cleardb.net";
  private $db = "heroku_f36640796dba974"; # private $db = "heroku_d66a31f2e552f3e";
  private $user = "b007dde3ed6cbd"; #private $user = "b2cf23ed5d39cc";
@@ -7,7 +10,7 @@ class Dao {
 
  public function getConnection () {
    try {
-        $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+        $conn = new mysqli($host, $username, $pass, $db);
         return $conn;
       } catch (Exception $e) {
         echo "connection failed: " . $e->getMessage();
