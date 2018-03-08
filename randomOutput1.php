@@ -14,8 +14,6 @@
   }
   echo "<p>";
   for ($x = 0; $x < 10; $x++) {
-    echo "(this is part of the loop)";
-    echo "<br>";
     $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
       while ($obj=mysqli_fetch_object($result)) {
@@ -38,7 +36,7 @@
       mysqli_free_result($result);
     }
     echo "<p>";
-    echo strtoupper($pronoun) . " " . $verb . " " . $noun . ".";
+    echo ucfirst($pronoun) . " " . $verb . " " . $noun . ".";
     echo "</p>";
     echo "<br>";
   }
