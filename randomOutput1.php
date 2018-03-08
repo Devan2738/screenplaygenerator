@@ -1,13 +1,23 @@
 <?php
+
   $pageName = 'testing';
   require_once('header.php');
-  #require_once "Dao.php";
-  #$dao = new Dao();
-  #echo 'hello from random output 1 .php';
-  #$words = $dao->getWords();
+  require_once "Dao.php";
+  $dao = new Dao();
 
+  echo "<p>";
+  for ($x = 0; $x < 10; $x++) {
+    $pronoun = $dao->getPronoun();
+    $verb = $dao->getVerb();
+    $noun = $dao->getNoun();
+    echo strtoupper($pronoun) . " " . $verb . " " . $noun . ".";
+    echo "<br>";
+  }
+  echo "</p>";
 
-  $hostname = "us-cdbr-iron-east-05.cleardb.net";
+  $dao->close();
+
+  /*$hostname = "us-cdbr-iron-east-05.cleardb.net";
   $db = "heroku_d66a31f2e552f3e";
   $user = "b2cf23ed5d39cc";
   $password = "f49471ca";
@@ -31,6 +41,8 @@
     mysqli_free_result($result);
   }
   mysqli_close($con);
+  */
+
 
 
   require_once('footer.php');

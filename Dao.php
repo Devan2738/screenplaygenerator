@@ -1,33 +1,49 @@
 <?php
 class Dao {
 
-#mysql://b007dde3ed6cbd:def99b02@us-cdbr-iron-east-05.cleardb.net/heroku_f36640796dba974?reconnect=true
-
- private $host = "us-cdbr-iron-east-05.cleardb.net";
- #private $db = "heroku_f36640796dba974"; #
+ private $hostname = "us-cdbr-iron-east-05.cleardb.net";
  private $db = "heroku_d66a31f2e552f3e";
- #private $user = "b007dde3ed6cbd"; #
  private $user = "b2cf23ed5d39cc";
- #private $pass = "def99b02"; #
- private $pass = "f49471ca";
- #mysql://b2cf23ed5d39cc:f49471ca@us-cdbr-iron-east-05.cleardb.net/heroku_d66a31f2e552f3e?reconnect=true
-
+ private $password = "f49471ca";
  private $conn;
 
  public function __construct() {
-   try {
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
-      } catch (Exception $e) {
-        echo "connection failed: " . $e->getMessage();
-      }
+   $this->conn = mysqli_connect($hostname,$user,$password,$db);
+   // Check connection
+   if (mysqli_connect_errno()) {
+     echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
  }
 
- public function getWords() {
-     $words = $this->conn->query('SELECT word FROM words LIMIT 100');
-     echo 'hey i\'m doing something here in dao.php';
-     while ($word = $words->fetch_object()){
-       echo $word;
-     }
+ public function getPronoun() {
+   $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
+   if ($result=mysqli_query($conn,$sql)) {
+     $obj=mysqli_fetch_object($result)
+     mysqli_free_result($result);
+     return $obj->word;
    }
+ }
+
+ public function getVerb() {
+   $sql="SELECT word FROM words WHERE isVerb = 1 ORDER BY RAND() LIMIT 1";
+   if ($result=mysqli_query($conn,$sql)) {
+     $obj=mysqli_fetch_object($result)
+     mysqli_free_result($result);
+     return $obj->word;
+   }
+ }
+
+ public function getNoun() {
+   $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
+   if ($result=mysqli_query($conn,$sql)) {
+     $obj=mysqli_fetch_object($result)
+     mysqli_free_result($result);
+     return $obj->word;
+   }
+ }
+
+ public function close() {
+     mysqli_close($conn);
+ }
 
 }
