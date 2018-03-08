@@ -1,19 +1,15 @@
 <?php
   $pageName = 'testing';
   require_once('header.php');
-  ?>
-<p>random output: <?php require_once('randomGenerator1.php');?> </p>
-<p></p>
-<p>something from database:
-  <?php
-    require_once('Dao.php');
-    $dao = new Dao();
-    $wordList = $dao->getWords();
-    for ($wordList as $word) {
-      echo "$word\n";
-    }
-  ?>
-</p>
+  require_once "Dao.php";
+  $dao = new Dao();
+  $words = $dao->getWords();
+?>
+  <ul>
+    <?php foreach ($words as $word) {
+      echo "<li> . $word . </li>";
+    } ?>
+  </ul>
 <?php
   require_once('footer.php');
-  ?>
+?>
