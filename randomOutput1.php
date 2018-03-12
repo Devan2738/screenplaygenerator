@@ -36,7 +36,7 @@
       mysqli_free_result($result);
     }
     echo "<p>";
-    echo ucfirst($pronoun) . " " . $verb . " " . $noun . ".";
+    echo ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
     echo "</p>";
     echo "<br>";
   }
