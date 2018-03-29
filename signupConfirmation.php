@@ -1,5 +1,5 @@
 <?php
-  $pageName = 'sign in';
+  $pageName = 'sign up';
   require_once('header.php');
   ?>
 <p>You have submitted the sign up form.</p>
