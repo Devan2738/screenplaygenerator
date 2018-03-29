@@ -3,15 +3,15 @@
     require_once('header.php');
 ?>
 <div id="signInDiv">
-    <form action="signinConfirmation.php">
+    <form action="signinConfirmation.php" method="post">
         <div class="imgcontainer">
         </div>
         <br>
         <div class="container">
-            <label for="uname"><b>Username</b></label>
+            <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" required>
 
-            <label for="psw"><b>Password</b></label>
+            <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
 
             <button type="submit">Login</button>
