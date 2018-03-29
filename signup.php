@@ -4,7 +4,7 @@
 ?>
 <!--<div id="signInSignUpDiv">-->
 <div id="signUpDiv">
-    <form action="signupConfirmation.php" style="border:1px solid #ccc" method="post">
+    <form action="signupConfirmation.php" style="border:1px solid #ccc">
         <div class="container">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
