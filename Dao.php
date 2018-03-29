@@ -8,6 +8,7 @@ class Dao {
  private $conn;
 
  public function __construct() {
+   echo 'Dao constructor was called'
    $this->conn = mysqli_connect($this->hostname,$this->user,$this->password,$this->db);
    // Check connection
    if (mysqli_connect_errno()) {
@@ -16,6 +17,7 @@ class Dao {
  }
 
  public function getPronoun() {
+   echo 'getPronoun was called'
    $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
    if ($result=mysqli_query($this->conn,$sql)) {
      $obj=mysqli_fetch_object($result)
@@ -25,6 +27,7 @@ class Dao {
  }
 
  public function getVerb() {
+   echo 'getVerb was called'
    $sql="SELECT word FROM words WHERE isVerb = 1 ORDER BY RAND() LIMIT 1";
    if ($result=mysqli_query($this->conn,$sql)) {
      $obj=mysqli_fetch_object($result)
@@ -34,6 +37,7 @@ class Dao {
  }
 
  public function getNoun() {
+   echo 'getNoun was called'
    $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
    if ($result=mysqli_query($this->conn,$sql)) {
      $obj=mysqli_fetch_object($result)
@@ -43,6 +47,7 @@ class Dao {
  }
 
  public function close() {
+     echo 'close was called'
      mysqli_close($this->conn);
  }
 
