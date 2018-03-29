@@ -7,10 +7,9 @@
 
       <label for="length">Length</label>
       <select id="length" name="length">
-        <option value="0-30 minutes">short</option>
-        <option value="30-60 minutes">medium</option>
-        <option value="60-90 minutes">not medium or long</option>
-        <option value="90+ minutes">long</option>
+        <option value=">0-60 minutes">0-60 minutes</option>
+        <option value="60-120 minutes">60-120 minutes</option>
+        <option value="120+ minutes">120+ minutes</option>
       </select>
 
       <label for="genre">Genre</label>
@@ -18,7 +17,6 @@
         <option value="comedy">Comedy</option>
         <option value="action">Action</option>
         <option value="drama">Drama</option>
-        <option value="documentary">documentary</option>
       </select>
 
       <input type="submit" value="Submit">
