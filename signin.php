@@ -3,7 +3,7 @@
     require_once('header.php');
 ?>
 <div id="signInDiv">
-    <form action="signinConfirmation.php">
+    <form action="signinConfirmation.php" method="post">
         <div class="imgcontainer">
         </div>
         <br>

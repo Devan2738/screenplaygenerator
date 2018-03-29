@@ -4,8 +4,8 @@
   ?>
 <p>You have submitted the sign in form.</p>
 <?php
-  echo '<p>username: ' . htmlspecialchars($_GET["uname"]) . '</p>';
-  echo '<p>password: ' . htmlspecialchars($_GET["psw"]) . '</p>';
+  echo '<p>username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
+  echo '<p>password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
   ?>
 <?php
   require_once('footer.php');
