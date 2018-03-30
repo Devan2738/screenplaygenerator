@@ -6,7 +6,7 @@
     $order66 = 'false';
     if (isset($_SESSION['invalid email address']))
     {
-        echo 'you entered an invalid email address';
+        echo '<p>you entered an invalid email address</p>';
         $order66 = 'true';
     }
     if (isset($_SESSION['email address'])){
@@ -16,14 +16,15 @@
         $order66 = 'true';
     }
     if (isset($_SESSION['info message'])){
-        echo $_SESSION['info message'];
+        echo '<p>' . $_SESSION['info message'] . '</p>';
         $order66 = 'true';
     }
     if ($order66 == 'true'){
       session_unset();
       session_destroy();
     }
-    echo ($email != ' ') ? $email : 'email session is not set';
+    echo '<p>';
+    echo '</p>';
 ?>
 <div id="signInDiv">
     <form action="signinConfirmation.php" method="post">
@@ -32,6 +33,7 @@
         <br>
         <div class="container">
             <label for="username"><b>Username</b></label>
+            <?php echo ($email != ' ') ? $email : 'email session is not set'; ?>
             <input type="text" placeholder="Enter Username" name="uname" required>
 
             <label for="password"><b>Password</b></label>
