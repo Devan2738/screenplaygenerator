@@ -19,7 +19,7 @@
       if($mysqli->connect_error) {
         exit('Error connecting to database'); //Should be a message a typical user could understand in production
       }
-      $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ?"))
+      $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ?");
       $stmt->bind_param("s", $_POST["uname"]);
       $stmt->execute();
       $result = $stmt->get_result();
