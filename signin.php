@@ -2,11 +2,11 @@
     session_start();
     $pageName = 'sign in';
     require_once('header.php');
-    /*if (isset($_SESSION['invalid email address']))
+    if (isset($_SESSION['invalid email address']))
     {
         echo 'you entered an invalid email address';
     }
-    if (isset($_SESSION['invalid password']))
+    /*if (isset($_SESSION['invalid password']))
     {
         echo 'you entered an invalid password';
     }
