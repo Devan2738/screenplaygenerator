@@ -8,8 +8,8 @@
   }
     require_once('header.php');
 
-    echo '<p> username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
-    echo '<p> password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
+    echo '<p> (before db) username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
+    echo '<p> (before db) password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
 
     $hostname = "us-cdbr-iron-east-05.cleardb.net";
     $db = "heroku_d66a31f2e552f3e";
@@ -19,7 +19,7 @@
     if($mysqli->connect_error) {
       exit('Error connecting to database'); //Should be a message a typical user could understand in production
     }
-    $stmt = $mysqli->prepare("SELECT email, password, signUpDate FROM users WHERE email = ?");
+    $stmt = $mysqli->prepare("SELECT email, password FROM users WHERE email = ?");
     $stmt->bind_param("s", $_POST['uname']);
     $stmt->execute();
     $stmt->store_result();
@@ -56,9 +56,12 @@
       echo 'username and password match an existing account!';
     }*/
     if (strcmp($password,$_POST["psw"])){
-      echo '$password' . $password;
-      echo '$_POST[psw]' . $_POST["psw"];
+      //echo '$password' . $password;
+      //echo '$_POST[psw]' . $_POST["psw"];
       echo "username and password match an existing account";
+    }
+    else {
+      echo "password does not match password for account";
     }
 
   require_once('footer.php');
