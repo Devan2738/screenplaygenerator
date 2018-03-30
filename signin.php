@@ -30,8 +30,6 @@
             <!--<label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>-->
-            <button type="button" class="cancelbtn">Cancel</button>
-        </div>
     </form>
 </div>
 <br>
