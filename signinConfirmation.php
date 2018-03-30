@@ -38,8 +38,11 @@
       else {
         echo 'username and password match an existing account!';
       }*/
-      if ($password = $_POST["psw"])
+      if (strcmp($password,$_POST["psw"])){
+        echo '$password' . $password;
+        echo '$_POST[psw]' . $_POST["psw"];
         echo "username and password match an existing account";
+      }
   ?>
 <?php
   require_once('footer.php');
