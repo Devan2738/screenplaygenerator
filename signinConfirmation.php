@@ -28,15 +28,14 @@
         }
         mysqli_free_result($result);
       }
-      if ($password = $_POST["psw"]){
-        //echo "password matches";
-      }
-      else {
+      if ($password != $_POST["psw"]){
         $_SESSION["invalid password"] = 'true';
         header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
         exit; // Ensures, that there is no code _after_ the redirect executed
       }
-      echo 'username and password match an existing account!';
+      else {
+        echo 'username and password match an existing account!';  
+      }
   ?>
 <?php
   require_once('footer.php');
