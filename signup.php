@@ -2,10 +2,6 @@
     session_start();
     $pageName = 'sign up';
     require_once('header.php');
-    if (isset($_SESSION['info message']))
-    {
-        echo $_SESSION['info message']);
-    }
 ?>
 <!--<div id="signInSignUpDiv">-->
 <div id="signUpDiv">

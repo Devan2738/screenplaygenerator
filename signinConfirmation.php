@@ -19,13 +19,14 @@
     if($mysqli->connect_error) {
       exit('Error connecting to database'); //Should be a message a typical user could understand in production
     }
+try{
     $stmt = $mysqli->prepare("SELECT email, password FROM users WHERE email = ?");
     $stmt->bind_param("s", $_POST['uname']);
     $stmt->execute();
     $stmt->store_result();
     if($stmt->num_rows === 0) {
-        $_SESSION["info message"] = '<p> please make an account, username entered was not found in the database </p>';
-        header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+        $_SESSION["info message"] = '<p> if you do no have an existing account, please create one </p>';
+        header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
         exit;
         //exit('No rows');
     }
@@ -34,6 +35,11 @@
     $output .= '<p> (db info) $email: ' . $email . '</p>';
     $output .= '<p> (db info) $password: ' . $password . '</p>';
     $stmt->close();
+  } catch (Exception $e){
+    $_SESSION["info message"] = '<p> if you do no have an existing account, please create one </p>';
+    header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
+    exit;
+  }
     /*$conn=mysqli_connect($hostname,$user,$password,$db);
     //if (mysqli_connect_errno()) {
     //  echo "Failed to connect to MySQL: " . mysqli_connect_error()

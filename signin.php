@@ -10,6 +10,9 @@
         echo '<p>you entered an invalid password, but a correct email</p>';
         echo $_SESSION['email address'];
     }
+    if (isset($_SESSION['info message'])){
+      echo $_SESSION['info message'];
+    }
 
 ?>
 <div id="signInDiv">
