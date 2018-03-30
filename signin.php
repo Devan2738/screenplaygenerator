@@ -2,7 +2,7 @@
     session_start();
     $pageName = 'sign in';
     require_once('header.php');
-    if (isset($_SESSION['invalid email address']))
+    /*if (isset($_SESSION['invalid email address']))
     {
         echo 'you entered an invalid email address';
     }
@@ -12,7 +12,7 @@
     }
     if (isset($_SESSION['email address']){
         echo $_SESSION['email address'];
-    }
+    }*/
 ?>
 <div id="signInDiv">
     <form action="signinConfirmation.php" method="post">
