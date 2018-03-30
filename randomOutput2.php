@@ -2,7 +2,8 @@
 
   $pageName = 'testing';
   require_once('header.php');
-  #require_once "Dao.php";
+  require_once("Dao.php)
+
   $dao = new Dao();
   echo "<p> here is a basic testing message from randomOutpu2.php </p>";
   echo "<p>";
