@@ -15,13 +15,24 @@
       $db = "heroku_d66a31f2e552f3e";
       $user = "b2cf23ed5d39cc";
       $password = "f49471ca";
-      $conn = new mysqli($hostname, $user, $password, $db);
-      if ($stmt = $mysqli->prepare("SELECT password FROM users WHERE email = ?")){
-          $stmt->bind_param("s", $_POST["uname"]);
-          $stmt->execute();
-          $stmt->bind_result($result);
-          $stmt->fetch();
-          echo '<p> fetched password from database: ' . $result . '</p>';
+      $mysqli = new mysqli($hostname, $user, $password, $db);
+      if($mysqli->connect_error) {
+        exit('Error connecting to database'); //Should be a message a typical user could understand in production
+      }
+      $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ?"))
+      $stmt->bind_param("s", $_POST["uname"]);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if ($result->num_rows === 0){
+        echo 'unknown email used, please make an account';
+      }
+      else {
+        $row = $result->fetch_assoc())
+        $password = $row['password'];
+        echo '<p> $password: . ' $password . '</p>';
+        $email = $row['email'];
+        echo '<p> $email: . ' $email . '</p>';
+        $signUpDate = $row['signUpDate'] . '</p>';
       }
       /*$conn=mysqli_connect($hostname,$user,$password,$db);
       //if (mysqli_connect_errno()) {
