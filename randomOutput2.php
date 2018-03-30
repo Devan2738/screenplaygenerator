@@ -3,9 +3,9 @@
   $pageName = 'testing';
   require_once('header.php');
   require_once("Dao.php");
-  $dao = new Dao();
+  //$dao = new Dao();
 
-  echo "<p> here is a basic testing message from randomOutpu2.php </p>";
+  echo "<p> here is a basic testing message from randomOutpu2.php why can't this print to the stupid screen </p>";
   /*echo "<p>";
   for ($x = 0; $x < 10; $x++) {
     $pronoun = $dao->getPronoun();
