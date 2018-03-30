@@ -2,7 +2,7 @@
     session_start();
     $pageName = 'sign in';
     require_once('header.php');
-    $email = ' ';
+    $email = '';
     $order66 = 'false';
     if (isset($_SESSION['invalid email address']))
     {
@@ -33,7 +33,7 @@
         <br>
         <div class="container">
             <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" value = <?php ($email != ' ') ? $email : 'email session is not set'; ?> name="uname" required>
+            <input type="text" placeholder="Enter Username" value = <?php $email ?> name="uname" required>
 
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
