@@ -27,7 +27,7 @@
         echo 'unknown email used, please make an account';
       }
       else {
-        $row = $result->fetch_assoc());
+        $row = $result->fetch_assoc();
         $password = $row['password'];
         echo '<p> $password: . ' $password . '</p>';
         $email = $row['email'];
