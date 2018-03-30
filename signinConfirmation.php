@@ -27,7 +27,7 @@
         echo 'unknown email used, please make an account';
       }
       else {
-        $row = $result->fetch_assoc())
+        $row = $result->fetch_assoc());
         $password = $row['password'];
         echo '<p> $password: . ' $password . '</p>';
         $email = $row['email'];
@@ -37,7 +37,7 @@
       }
       /*$conn=mysqli_connect($hostname,$user,$password,$db);
       //if (mysqli_connect_errno()) {
-      //  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      //  echo "Failed to connect to MySQL: " . mysqli_connect_error()
       //}
       $sql="SELECT * FROM users WHERE email = " . $_POST["uname"];
       if ($result=mysqli_query($conn,$sql)) {
