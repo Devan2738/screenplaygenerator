@@ -19,22 +19,20 @@
       if($mysqli->connect_error) {
         exit('Error connecting to database'); //Should be a message a typical user could understand in production
       }
-      $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ?");
-      $stmt->bind_param("s", $_POST["uname"]);
+      $stmt = $mysqli->prepare("SELECT email, password, signUpDate FROM users WHERE email = ?");
+      $stmt->bind_param("s", $_POST['uname']);
       $stmt->execute();
-      $result = $stmt->get_result();
-      if ($result->num_rows === 0){
-        echo 'unknown email used, please make an account';
+      $stmt->store_result();
+      if($stmt->num_rows === 0) {
+          echo '<p> the username entered was not found in the database </p>';
+          //exit('No rows');
       }
-      else {
-        $row = $result->fetch_assoc();
-        $password = $row['password'];
-        echo '<p> $password: . ' $password . '</p>';
-        $email = $row['email'];
-        echo '<p> $email: . ' $email . '</p>';
-        $signUpDate = $row['signUpDate'];
-        echo '<p> $signUpDate: ' . $signUpDate . '</p>';
-      }
+      $stmt->bind_result($email, $password, $signUpDate);
+      $stmt->fetch();
+      echo $email; 
+      echo $password;
+      echo $signUpDate;
+      $stmt->close();
       /*$conn=mysqli_connect($hostname,$user,$password,$db);
       //if (mysqli_connect_errno()) {
       //  echo "Failed to connect to MySQL: " . mysqli_connect_error()
