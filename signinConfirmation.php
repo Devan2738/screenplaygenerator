@@ -25,6 +25,8 @@
           $_SESSION['email address'] = $_POST["uname"];
           //echo "username was found";
           $password = $obj->password;
+          echo '$password: ' . $password;
+          echo '$_POST["psw"] ' . $_POST["psw"]; 
         }
         mysqli_free_result($result);
       }
