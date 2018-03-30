@@ -19,11 +19,11 @@
         echo $_SESSION['info message'];
         $order66 = 'true';
     }
-    if ($order66 = 'true'){
+    if ($order66 == 'true'){
       session_unset();
       session_destroy();
     }
-    //echo ($email != ' ' ? : $email : 'email session is not set');
+    echo ($email != ' ') ? $email : 'email session is not set';
 ?>
 <div id="signInDiv">
     <form action="signinConfirmation.php" method="post">
