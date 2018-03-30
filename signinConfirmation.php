@@ -1,7 +1,7 @@
 <?php
   session_start();
   $pageName = 'sign in';
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL))  {
+  if (!filter_var($_POST["uname"], FILTER_VALIDATE_EMAIL))  {
     $_SESSION["invalid email address"] = 'true';
     header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
