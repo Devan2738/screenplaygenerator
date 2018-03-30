@@ -1,4 +1,3 @@
-<pre>
 <?php
 
   $pageName = 'testing';
@@ -24,4 +23,3 @@
   $dao->close();*/
   require_once('footer.php');
 ?>
-</pre>
