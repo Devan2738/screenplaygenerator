@@ -2,18 +2,28 @@
     session_start();
     $pageName = 'sign in';
     require_once('header.php');
+    $email = -1;
+    $order66 = 'false';
     if (isset($_SESSION['invalid email address']))
     {
         echo 'you entered an invalid email address';
+        $order66 = 'true';
     }
     if (isset($_SESSION['email address'])){
         echo '<p>you entered an invalid password, but a correct email</p>';
         echo $_SESSION['email address'];
+        $email  = $_SESSION['email address'];
+        $order66 = 'true';
     }
     if (isset($_SESSION['info message'])){
-      echo $_SESSION['info message'];
+        echo $_SESSION['info message'];
+        $order66 = 'true';
     }
-
+    if ($order66 = 'true'){
+      session_unset();
+      session_destroy();
+    }
+    echo ($email != -1 ? : $email : 'email session is not set');
 ?>
 <div id="signInDiv">
     <form action="signinConfirmation.php" method="post">
