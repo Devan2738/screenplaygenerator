@@ -2,7 +2,7 @@
     session_start();
     $pageName = 'sign in';
     require_once('header.php');
-    $email = -1;
+    $email = ' ';
     $order66 = 'false';
     if (isset($_SESSION['invalid email address']))
     {
@@ -23,7 +23,7 @@
       session_unset();
       session_destroy();
     }
-    echo ($email != -1 ? : $email : 'email session is not set');
+    //echo ($email != ' ' ? : $email : 'email session is not set');
 ?>
 <div id="signInDiv">
     <form action="signinConfirmation.php" method="post">
