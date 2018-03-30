@@ -2,11 +2,9 @@
 
   $pageName = 'testing';
   require_once('header.php');
-  require_once("Dao.php");
-?>
+  //require_once("Dao.php");
 
-<?php
-  //$dao = new Dao();
+  $dao = new Dao();
   echo "<p> here is a basic testing message from why can't this print to the stupid screen </p>";
   /*echo "<p>";
   for ($x = 0; $x < 10; $x++) {
