@@ -31,8 +31,8 @@
     }
     $stmt->bind_result($email, $password);
     $stmt->fetch();
-    output .= '<p> (db info) $email: ' . $email . '</p>';
-    output .= '<p> (db info) $password: ' . $password . '</p>';
+    $output .= '<p> (db info) $email: ' . $email . '</p>';
+    $output .= '<p> (db info) $password: ' . $password . '</p>';
     $stmt->close();
     /*$conn=mysqli_connect($hostname,$user,$password,$db);
     //if (mysqli_connect_errno()) {
@@ -60,7 +60,7 @@
     if ($password === $_POST["psw"]){
       //echo '$password' . $password;
       //echo '$_POST[psw]' . $_POST["psw"];
-      output .= "<p>username and password match an existing account</p>";
+      $output .= "<p>username and password match an existing account</p>";
     }
     else {
         $_SESSION['email address'] = $_POST["uname"];
