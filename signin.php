@@ -1,6 +1,15 @@
 <?php
+    session_start();
     $pageName = 'sign in';
     require_once('header.php');
+    if (isset($_SESSION['invalid email address']))
+    {
+        echo 'you entered an invalid email address';
+    }
+    if (isset($_SESSION['invalid password']))
+    {
+        echo 'you entered an invalid password';
+    }
 ?>
 <div id="signInDiv">
     <form action="signinConfirmation.php" method="post">
@@ -9,7 +18,7 @@
         <br>
         <div class="container">
             <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" value=<<?php(isset($_SESSION['email address']) ? $_SESSION['email address'] : '') ?> name="uname" required>
 
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>

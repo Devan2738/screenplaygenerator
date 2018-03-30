@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $pageName = 'common q\'s';
   require_once('header.php');
   ?>

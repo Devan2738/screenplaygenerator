@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $pageName = 'careers';
   require_once('header.php');
   ?>

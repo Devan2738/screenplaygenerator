@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $pageName = 'science';
   require_once('header.php');
   ?>

@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   $pageName = 'testing';
   require_once('header.php');
   #require_once "Dao.php";
