@@ -29,8 +29,8 @@
     }
     $stmt->bind_result($email, $password);
     $stmt->fetch();
-    echo '<p> $email: ' . $email . '</p>';
-    echo '<p> $password: ' . $password . '</p>';
+    echo '<p> (db info) $email: ' . $email . '</p>';
+    echo '<p> (db info) $password: ' . $password . '</p>';
     $stmt->close();
     /*$conn=mysqli_connect($hostname,$user,$password,$db);
     //if (mysqli_connect_errno()) {
@@ -55,7 +55,7 @@
     else {
       echo 'username and password match an existing account!';
     }*/
-    if (strcmp($password,$_POST["psw"])){
+    if ($password === $_POST["psw"]){
       //echo '$password' . $password;
       //echo '$_POST[psw]' . $_POST["psw"];
       echo "username and password match an existing account";
