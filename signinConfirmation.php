@@ -8,7 +8,6 @@
   }
   require_once('header.php');
 
-  <p>You have submitted the sign in form.</p>
   //echo '<p>username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
   //echo '<p>password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
 
