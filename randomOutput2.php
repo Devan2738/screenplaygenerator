@@ -1,3 +1,4 @@
+<pre>
 <?php
 
   $pageName = 'testing';
@@ -5,7 +6,10 @@
   //require_once("Dao.php");
 
   //$dao = new Dao();
-  echo "<p> here is a basic testing message from why can't this print to the stupid screen </p>";
+  echo "<p> serenity now </p>";
+  $veggie = new Vegetable(true, "blue");
+  print_vars($veggie);
+  print_methods($veggie);
   /*echo "<p>";
   for ($x = 0; $x < 10; $x++) {
     $pronoun = $dao->getPronoun();
@@ -20,3 +24,4 @@
   $dao->close();*/
   require_once('footer.php');
 ?>
+</pre>
