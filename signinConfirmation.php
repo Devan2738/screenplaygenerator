@@ -8,8 +8,8 @@
   }
     require_once('header.php');
 
-    echo '<p> (before db) username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
-    echo '<p> (before db) password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
+    $output = '<p> (before db) username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
+    $output .= '<p> (before db) password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
 
     $hostname = "us-cdbr-iron-east-05.cleardb.net";
     $db = "heroku_d66a31f2e552f3e";
@@ -24,13 +24,15 @@
     $stmt->execute();
     $stmt->store_result();
     if($stmt->num_rows === 0) {
-        echo '<p> the username entered was not found in the database </p>';
+        $_SESSION["info message"] = '<p> please make an account, username entered was not found in the database </p>';
+        header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+        exit;
         //exit('No rows');
     }
     $stmt->bind_result($email, $password);
     $stmt->fetch();
-    echo '<p> (db info) $email: ' . $email . '</p>';
-    echo '<p> (db info) $password: ' . $password . '</p>';
+    output .= '<p> (db info) $email: ' . $email . '</p>';
+    output .= '<p> (db info) $password: ' . $password . '</p>';
     $stmt->close();
     /*$conn=mysqli_connect($hostname,$user,$password,$db);
     //if (mysqli_connect_errno()) {
@@ -58,11 +60,13 @@
     if ($password === $_POST["psw"]){
       //echo '$password' . $password;
       //echo '$_POST[psw]' . $_POST["psw"];
-      echo "username and password match an existing account";
+      output .= "<p>username and password match an existing account</p>";
     }
     else {
-      echo "password does not match password for account";
+        $_SESSION['email address'] = $_POST["uname"];
+        header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
+        exit;
     }
-
+    echo $output;
   require_once('footer.php');
   ?>

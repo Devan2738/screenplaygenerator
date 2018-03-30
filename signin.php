@@ -6,13 +6,11 @@
     {
         echo 'you entered an invalid email address';
     }
-    /*if (isset($_SESSION['invalid password']))
-    {
-        echo 'you entered an invalid password';
-    }
-    if (isset($_SESSION['email address']){
+    if (isset($_SESSION['email address'])){
+        echo '<p>you entered an invalid password, but a correct email</p>';
         echo $_SESSION['email address'];
-    }*/
+    }
+
 ?>
 <div id="signInDiv">
     <form action="signinConfirmation.php" method="post">
