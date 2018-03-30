@@ -15,12 +15,20 @@
       $db = "heroku_d66a31f2e552f3e";
       $user = "b2cf23ed5d39cc";
       $password = "f49471ca";
-      $con=mysqli_connect($hostname,$user,$password,$db);
+      $conn = new mysqli($hostname, $user, $password, $db);
+      if ($stmt = $mysqli->prepare("SELECT password FROM users WHERE email = ?")){
+          $stmt->bind_param("s", $_POST["uname"]);
+          $stmt->execute();
+          $stmt->bind_result($result);
+          $stmt->fetch();
+          echo '<p> fetched password from database: ' . $result . '</p>';
+      }
+      /*$conn=mysqli_connect($hostname,$user,$password,$db);
       //if (mysqli_connect_errno()) {
       //  echo "Failed to connect to MySQL: " . mysqli_connect_error();
       //}
       $sql="SELECT * FROM users WHERE email = " . $_POST["uname"];
-      if ($result=mysqli_query($con,$sql)) {
+      if ($result=mysqli_query($conn,$sql)) {
         if ($obj=mysqli_fetch_object($result)) {
           $_SESSION['email address'] = $_POST["uname"];
           //echo "username was found";
@@ -29,7 +37,7 @@
           echo '$_POST[psw]' . $_POST["psw"];
         }
         mysqli_free_result($result);
-      }
+      }*/
       /*if ($password != $_POST["psw"]){
         $_SESSION["invalid password"] = 'true';
         header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
@@ -43,7 +51,7 @@
         echo '$_POST[psw]' . $_POST["psw"];
         echo "username and password match an existing account";
       }
-  ?>
-<?php
+
+
   require_once('footer.php');
   ?>
