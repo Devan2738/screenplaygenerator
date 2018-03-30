@@ -33,8 +33,7 @@
         <br>
         <div class="container">
             <label for="username"><b>Username</b></label>
-            <?php echo ($email != ' ') ? $email : 'email session is not set'; ?>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" value = <?php ($email != ' ') ? $email : 'email session is not set'; ?> name="uname" required>
 
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
