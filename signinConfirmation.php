@@ -32,7 +32,8 @@
         echo '<p> $password: . ' $password . '</p>';
         $email = $row['email'];
         echo '<p> $email: . ' $email . '</p>';
-        $signUpDate = $row['signUpDate'] . '</p>';
+        $signUpDate = $row['signUpDate'];
+        echo '<p> $signUpDate: ' . $signUpDate . '</p>';
       }
       /*$conn=mysqli_connect($hostname,$user,$password,$db);
       //if (mysqli_connect_errno()) {
