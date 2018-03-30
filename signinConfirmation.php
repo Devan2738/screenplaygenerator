@@ -24,7 +24,7 @@
         if ($obj=mysqli_fetch_object($result)) {
           $_SESSION['email address'] = $_POST["uname"];
           //echo "username was found";
-          $password = $obj->word;
+          $password = $obj->password;
         }
         mysqli_free_result($result);
       }
@@ -34,7 +34,7 @@
         exit; // Ensures, that there is no code _after_ the redirect executed
       }
       else {
-        echo 'username and password match an existing account!';  
+        echo 'username and password match an existing account!';
       }
   ?>
 <?php
