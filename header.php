@@ -17,7 +17,7 @@
           session_start();
           if (isset($_SESSION['username']))
           {
-            echo "<h3> hello " . $_SESSION['username'] . "</h3>";
+            echo "<h3> hello " . explode('@', $_SESSION['username'])[0] . "</h3>";
           }
         ?>
         <ul id="linksInTheHeader" margin-left: >
