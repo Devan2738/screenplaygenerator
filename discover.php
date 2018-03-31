@@ -1,5 +1,4 @@
 <?php
-  session_start();
   $pageName = 'discover';
   require_once('header.php');
   ?>

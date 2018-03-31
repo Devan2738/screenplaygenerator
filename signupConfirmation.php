@@ -1,5 +1,4 @@
 <?php
-  session_start();
   $pageName = 'sign up';
   require_once('header.php');
   ?>

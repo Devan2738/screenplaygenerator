@@ -1,5 +1,4 @@
 <?php
-  session_start();
   $pageName = 'contact us';
   require_once('header.php');
   ?>

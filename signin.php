@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $pageName = 'sign in';
     require_once('header.php');
     $email = '';

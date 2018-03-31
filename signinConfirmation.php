@@ -1,5 +1,4 @@
 <?php
-  session_start();
   $pageName = 'sign in';
   if (!filter_var($_POST["uname"], FILTER_VALIDATE_EMAIL))  {
     $_SESSION["invalid email address"] = 'true';
@@ -66,6 +65,7 @@ try{
     if ($password === $_POST["psw"]){
       //echo '$password' . $password;
       //echo '$_POST[psw]' . $_POST["psw"];
+      $_SESSION['username'] = $_POST["uname"];
       $output .= "<p>username and password match an existing account</p>";
     }
     else {

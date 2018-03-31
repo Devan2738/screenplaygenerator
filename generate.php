@@ -1,5 +1,4 @@
 <?php
-  session_start();
   $pageName = 'generate';
   require_once('header.php');
   ?>

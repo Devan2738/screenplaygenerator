@@ -1,5 +1,4 @@
 <?php
-  session_start();
   $pageName = 'submission confirmation';
   require_once('header.php');
   ?>
