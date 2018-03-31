@@ -15,6 +15,7 @@
         <h1>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
         <?php
           session_start();
+          echo "<p> testing a simple echo </p>";
           if (isset($_SESSION['errors']))
           {
             echo "<h3> hello " . $_SESSION['username'] . "</h3>";
