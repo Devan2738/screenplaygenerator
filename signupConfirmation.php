@@ -15,6 +15,14 @@
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
+  $hostname = "us-cdbr-iron-east-05.cleardb.net";
+  $db = "heroku_d66a31f2e552f3e";
+  $user = "b2cf23ed5d39cc";
+  $dbPassword = "f49471ca";
+  $mysqli = new mysqli($hostname, $user, $dbPassword, $db);
+  if($mysqli->connect_error) {
+    exit('Error connecting to database'); //Should be a message a typical user could understand in production
+  }
   try{
       $stmt = $mysqli->prepare("SELECT email FROM users WHERE email = ?");
       $stmt->bind_param("s", $_POST['email']);
