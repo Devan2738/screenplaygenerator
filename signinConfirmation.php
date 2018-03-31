@@ -1,12 +1,11 @@
 <?php
   $pageName = 'sign in';
+  require_once('header.php');
   if (!filter_var($_POST["uname"], FILTER_VALIDATE_EMAIL))  {
     $_SESSION["invalid email address"] = 'true';
     header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
-    require_once('header.php');
-
     $output = '<p> (before db) username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
     $output .= '<p> (before db) password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
 
