@@ -40,8 +40,9 @@
       header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
       exit;
     }
-  if ($_SESSION['psw'] != $_SESSION['psw-repeat']){
+  if (!($_POST['psw'] === $_POST['psw-repeat'])) {
     $_SESSION["email address"] = $_POST['email'];
+    $_SESSION['info message'] = "please enter the same password twices";
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
