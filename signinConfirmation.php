@@ -66,12 +66,15 @@ try{
       //echo '$_POST[psw]' . $_POST["psw"];
       $_SESSION['username'] = $_POST["uname"];
       $output .= "<p>username and password match an existing account</p>";
+      $_SESSION['info message'] = "log in was successful!";
+      header('Location: ' . 'http://www.screenplaygenerator.com');
+      exit;
     }
     else {
         $_SESSION['email address'] = $_POST["uname"];
         header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
         exit;
     }
-    echo $output;
+
   require_once('footer.php');
   ?>

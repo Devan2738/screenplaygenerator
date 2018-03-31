@@ -15,6 +15,11 @@
         <h1>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
         <?php
           session_start();
+          if (isset($_SESSION['info message']))
+          {
+            echo "<h3> " . $_SESSION['info message'] . "</h3>";
+            $_SESSION['info message'] = '';
+          }
           if (isset($_SESSION['username']))
           {
             echo "<h3> hello " . explode('@', $_SESSION['username'])[0] . "</h3>";

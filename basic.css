@@ -99,7 +99,7 @@ body {
 
 #footerContainer {
   margin: auto;
-  padding-left: 35%;
+  padding: auto;
   font-size: 15px;
   bottom: 0px;
   position: absolute;
@@ -157,7 +157,7 @@ input[type=submit]:hover {
 
 /* Add a background color and some padding around the form */
 .container {
-    padding: 16px;
+    /*padding: 16px;
     /*border-radius: 5px;
     /*background-color: #f2f2f2;*/
     padding: 12px 5% 5% 5%;
