@@ -24,6 +24,14 @@
           <!--<li class="headerLinks"><a href="discover.php">discover</a></li>-->
           <li class="headerLinks"><a href="generate.php">generate</a></li>
           <li class="headerLinks"><a href="science.php">science</a></li>
-          <li class="headerLinks"><a href="signin.php">sign in</a></li>
-          <li class="headerLinks"><a href="signup.php">sign up</a></li>
+          <?php
+            if (isset($_SESSION['username']))
+            {
+              echo "<li class=\"headerLinks\"><a href=\"signout.php\">sign out</a></li>";
+            }
+            else {
+              echo "<li class=\"headerLinks\"><a href=\"signin.php\">sign in</a></li>";
+              echo "<li class=\"headerLinks\"><a href=\"signup.php\">sign up</a></li>";
+            }
+          ?>
         </ul>
