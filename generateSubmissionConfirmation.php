@@ -20,7 +20,7 @@
   for ($x = 0; $x < 10*$_POST['length']; $x++) {
 
     // scene description here
-    echo "scene number $x: "
+    echo "scene number $x: ";
     $sceneDescription = '';
     $sql="SELECT word FROM words WHERE isPreposition = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
