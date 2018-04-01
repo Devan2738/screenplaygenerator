@@ -12,6 +12,7 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   function getEndPunc(){
+    echo "getEndPunc was called";
     $puncDeterminer = rand (0, 100);
     if ($puncDeterminer <= 50){
       echo '.';
@@ -27,6 +28,7 @@
     }
   }
   function getIndependentClause(){
+    echo "getIndependentClause was called";
     $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
       while ($obj=mysqli_fetch_object($result)) {
@@ -51,6 +53,7 @@
     return ucfirst($pronoun) . " " . $verb . " the " . $noun;
   }
   function getInterjection(){
+    echo "getInterjection was called<br>";
     $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
       while ($obj=mysqli_fetch_object($result)) {
@@ -61,6 +64,7 @@
     return $interjection;
   }
   function getSentence(){
+    echo "getSentence was called<br>";
     $initStructDeterminer = rand(0, 100);
     if ($initStructDeterminer < 60){
       echo getIndependentClause();
