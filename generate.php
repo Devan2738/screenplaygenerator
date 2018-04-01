@@ -6,7 +6,7 @@
     <form action="generateSubmissionConfirmation.php" method="post">
 
       <label for="fname">Main Character</label>
-      <input type="text" id="main1" name="mainCharacter" value="<?php explode('@', $_SESSION['username'])[0] ?>" placeholder="main character 1..">
+      <input type="text" id="main1" name="mainCharacter" value="<?php echo explode('@', $_SESSION['username'])[0] ?>" placeholder="main character 1..">
 
       <label for="fname"><br>Main Character 2</label>
       <input type="text" id="main2" name="otherCharacter" placeholder="main character 2..">
