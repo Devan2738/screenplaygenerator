@@ -48,8 +48,7 @@
       }
       mysqli_free_result($result);
     }
-    $output = ucfirst($pronoun) . " " . $verb . " the " . $noun;
-    echo $output;
+    return ucfirst($pronoun) . " " . $verb . " the " . $noun;
   }
   function getInterjection(){
     $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
@@ -59,25 +58,25 @@
       }
       mysqli_free_result($result);
     }
-    echo $interjection;
+    return $interjection;
   }
   function getSentence(){
     $initStructDeterminer = rand(0, 100);
     if ($initStructDeterminer < 60){
-      getIndependentClause();
+      echo getIndependentClause();
     }
     else if ($initStructDeterminer < 80){
-      getInterjection();
+      echo getInterjection();
     }
     else if ($initStructDeterminer < 90) {
-      getInterjection();
+      echo getInterjection();
       echo ", ";
-      getIndependentClause();
+      echo getIndependentClause();
     }
     else {
-      getInterjection();
+      echo getInterjection();
       echo "... ";
-      getIndependentClause();
+      echo getIndependentClause();
     }
     getEndPunc();
   }
