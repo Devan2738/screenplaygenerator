@@ -87,7 +87,7 @@
               mysqli_free_result($result);
             }
             echo "<p>";
-            echo $speaker . ": " . ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
+            echo mb_strtoupper($speaker) . "<br>" . ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
             echo "</p>";
         }
         echo "<br>";
