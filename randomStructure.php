@@ -26,35 +26,6 @@
       echo '...';
     }
   }
-  function getSentence(){
-    $initStructDeterminer = rand(0, 100);
-    if ($initStructDeterminer < 60){
-      getIndependentClause();
-    }
-    else if ($initStructDeterminer < 80){
-      getInterjection();
-    }
-    else if ($initStructDeterminer < 90) {
-      getInterjection();
-      echo ", ";
-      getIndependentClause();
-    }
-    else {
-      getInterjection();
-      echo "... ";
-      getIndependentClause();
-    }
-    getEndPunc();
-  }
-  function getInterjection(){
-    $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
-    if ($result=mysqli_query($con,$sql)) {
-      while ($obj=mysqli_fetch_object($result)) {
-        $interjection = $obj->word;
-      }
-      mysqli_free_result($result);
-    }
-  }
   function getIndependentClause(){
     $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
@@ -77,7 +48,36 @@
       }
       mysqli_free_result($result);
     }
-    echo ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
+    echo ucfirst($pronoun) . " " . $verb . " the " . $noun . "";
+  }
+  function getInterjection(){
+    $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
+    if ($result=mysqli_query($con,$sql)) {
+      while ($obj=mysqli_fetch_object($result)) {
+        $interjection = $obj->word;
+      }
+      mysqli_free_result($result);
+    }
+  }
+  function getSentence(){
+    $initStructDeterminer = rand(0, 100);
+    if ($initStructDeterminer < 60){
+      getIndependentClause();
+    }
+    else if ($initStructDeterminer < 80){
+      getInterjection();
+    }
+    else if ($initStructDeterminer < 90) {
+      getInterjection();
+      echo ", ";
+      getIndependentClause();
+    }
+    else {
+      getInterjection();
+      echo "... ";
+      getIndependentClause();
+    }
+    getEndPunc();
   }
   for ($x = 0; $x < 10; $x++) {
     echo "<p>";
