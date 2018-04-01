@@ -20,18 +20,49 @@
   for ($x = 0; $x < 10*$_POST['length']; $x++) {
 
     // scene description here
+    echo "scene number $x: "
+    $sceneDescription = '';
+    $sql="SELECT word FROM words WHERE isPreposition = 1 ORDER BY RAND() LIMIT 1";
+    if ($result=mysqli_query($con,$sql)) {
+      $obj=mysqli_fetch_object($result);
+      $sceneDescription .= $obj->word . " ";
+      mysqli_free_result($result);
+    }
+    $sql="SELECT word FROM words WHERE isLocation = 1 ORDER BY RAND() LIMIT 1";
+    if ($result=mysqli_query($con,$sql)) {
+      $obj=mysqli_fetch_object($result);
+      $sceneDescription .= $obj->word;
+      mysqli_free_result($result);
+    }
+    // generate description here
+    echo "scene description: " . $sceneDescription;
 
     // decide on random length (within range) of scene
+    $sceneLength = rand(8,16);
 
     // for i in sceneLength
+    for ($x = 0; $x < $ceneLength; $x++) {
 
         // randomly choose between narration and dialog (40/60 split)
+        $sceneDeterminer = rand(0,100);
 
         // if narration
+        if ($sceneDeterminer <= 40){
             // generate narration
+            echo "<p>insert scene narration here<p>";
 
+        }
         // if dialog
+        else {
+
             // decide who will speak
+            $speakerDeterminer = rand(0, 100);
+
+            if ($speakerDeterminer <= 50){
+                $speaker = $mainCharacter;
+            } else {
+                $speaker = $otherCharacter;
+            }
 
             $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
             if ($result=mysqli_query($con,$sql)) {
@@ -55,9 +86,11 @@
               mysqli_free_result($result);
             }
             echo "<p>";
-            echo ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
+            echo $speaker . ": " . ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
             echo "</p>";
             echo "<br>";
+        }
+     }
   }
 
   echo "<br>";
