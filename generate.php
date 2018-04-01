@@ -11,12 +11,12 @@
       <label for="fname"><br>Main Character 2</label>
       <input type="text" id="main2" name="mainCharacter" placeholder="main character 2..">
 
-      <label for="year"><br>Year</label>
+      <!--<label for="year"><br>Year</label>
       <select id="length" name="length" value="2000-present">
         <option value="1900-1950">1900-1950</option>
         <option value="1951-2000">1951-2000</option>
         <option value="2000-present">2000-present</option>
-      </select>
+      </select>-->
 
       <label for="length"><br>Length</label>
       <select id="length" name="length" value="1">
@@ -26,12 +26,13 @@
         <option value="4">extra long</option>
       </select>
 
+      <!--
       <label for="genre"><br>Genre</label>
       <select id="genre" name="genre" value="comedy">
         <option value="comedy">Comedy</option>
         <option value="action">Action</option>
         <option value="drama">Drama</option>
-      </select>
+      </select>-->
 
       <input type="submit" value="Submit">
 
