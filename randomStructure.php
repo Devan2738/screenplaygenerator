@@ -49,27 +49,32 @@
   function getInterjection(){
     $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
-      echo mysqli_fetch_object($result)->word;
+      while ($obj=mysqli_fetch_object($result)) {
+        $interjection = $obj->word;
+      }
       mysqli_free_result($result);
     }
   }
   function getIndependentClause(){
     $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
-      $obj=mysqli_fetch_object($result);
-      $pronoun = $obj->word;
+      while ($obj=mysqli_fetch_object($result)) {
+        $pronoun = $obj->word;
+      }
       mysqli_free_result($result);
     }
     $sql="SELECT word FROM words WHERE isVerb = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
-        $obj=mysqli_fetch_object($result);
+      while ($obj=mysqli_fetch_object($result)) {
         $verb = $obj->word;
+      }
       mysqli_free_result($result);
     }
     $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
-      $obj=mysqli_fetch_object($result);
-      $noun = $obj->word;
+      while ($obj=mysqli_fetch_object($result)) {
+        $noun = $obj->word;
+      }
       mysqli_free_result($result);
     }
     echo ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
