@@ -7,6 +7,7 @@
   <?php
     // the message
     $msg = $_POST['subject'];
+    $msg .= "<br>(sent from user '" . $_POST['username'] . "'')";
     // use wordwrap() if lines are longer than 70 characters
     $msg = wordwrap($msg,70);
     // send email

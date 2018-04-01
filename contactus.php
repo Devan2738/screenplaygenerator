@@ -7,7 +7,7 @@
       <form action="contactSubmissionConfirmation.php" method="post">
 
         <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." >
 
         <label for="lname"><br>Last Name</label>
         <input type="text" id="lname" name="lastname" placeholder="Your last name..">
@@ -19,9 +19,9 @@
           <option value="usa">USA</option>
         </select>
 
-        <label for="subject"><br>Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
+        <!--<label for="subject"><br>Subject</label>-->
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+        <input type="hidden" name="username" value="<?php echo $_SESSION['username'] ?>" >
         <input type="submit" value="Submit">
 
     </form>
