@@ -13,10 +13,9 @@
     // start of testing
     echo "<p>\$_POST['firstname']: " . $_POST['firstname'] . "</p>";
     echo "<p>\$_POST['lastname']: " . $_POST['lastname'] . "</p>";
-    echo "<p>\$_POST['Country']: " . $_POST['Country'] . "</p>";
     echo "<p>\$msg: " . $msg . "</p>";
     // end of testing
-    mail("devankarsann@u.boisestate.edu","contact us form submission from \"" . $_POST['firstname'] . " " . $_POST['lastname'] . "\" in " . $_POST['Country'],$msg);
+    mail("devankarsann@u.boisestate.edu","contact us form submission from " . $_POST['firstname'] . " " . $_POST['lastname'],$msg);
   ?>
 </div>
 <?php

@@ -12,16 +12,9 @@
         <label for="lname"><br>Last Name</label>
         <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-        <label for="country"><br>Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-
         <!--<label for="subject"><br>Subject</label>-->
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
-        <input type="hidden" name="username" value="<?php echo $_SESSION['username'] ?>" >
+        <input type="hidden" name="username" value="<?php echo $_SESSION['username'] ?>">
         <input type="submit" value="Submit">
 
     </form>
