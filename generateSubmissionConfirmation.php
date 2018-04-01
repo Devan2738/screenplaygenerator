@@ -89,7 +89,6 @@
             echo "<p>";
             echo $speaker . ": " . ucfirst($pronoun) . " " . $verb . " the " . $noun . ".";
             echo "</p>";
-            echo "<br>";
         }
         echo "<br>";
      }
