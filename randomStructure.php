@@ -48,8 +48,8 @@
       }
       mysqli_free_result($result);
     }
-    echo "test";
-    echo ucfirst($pronoun) . " " . $verb . " the " . $noun;
+    $output = ucfirst($pronoun) . " " . $verb . " the " . $noun;
+    echo $output;
   }
   function getInterjection(){
     $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
