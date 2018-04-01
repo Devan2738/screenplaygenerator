@@ -5,6 +5,14 @@
     <link rel="stylesheet" href="basic.css">
     <title>
       <?php
+        session_start();
+        if (!isset($_SESSION["info message"]) or !($_SESSION["info message"] === "you need an account to generate screenplays")){
+          if ($pageName === 'generate' and !(isset($_SESSION['username']))){
+            $_SESSION["info message"] = 'you need an account to generate screenplays';
+            header('Location: ' . 'http://www.screenplaygenerator.com');
+            exit; // Ensures, that there is no code _after_ the redirect executed
+          }
+        }
         echo $pageName
         ?>
     </title>
@@ -14,7 +22,7 @@
       <div id="onTopOfBackDiv">
         <h1>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
         <?php
-          session_start();
+
           if (isset($_SESSION['info message']))
           {
             echo "<h3> " . $_SESSION['info message'] . "</h3>";
@@ -27,9 +35,12 @@
         ?>
         <ul id="linksInTheHeader" margin-left: >
           <!--<li class="headerLinks"><a href="discover.php">discover</a></li>-->
-          <li class="headerLinks"><a href="generate.php">generate</a></li>
-          <li class="headerLinks"><a href="science.php">science</a></li>
           <?php
+          if (isset($_SESSION['username']))
+          {
+            echo "<li class=\"headerLinks\"><a href=\"generate.php\">generate</a></li>";
+          }
+          echo "<li class=\"headerLinks\"><a href=\"science.php\">science</a></li>";
             if (isset($_SESSION['username']))
             {
               echo "<li class=\"headerLinks\"><a href=\"signout.php\">sign out</a></li>";
