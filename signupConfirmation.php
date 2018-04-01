@@ -46,11 +46,10 @@
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
-/* new code to work on*/
+  /* new code to work on*/
   try{
       $stmt = $mysqli->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
-      $stmt->bind_param("s", $_POST['email']);
-      $stmt->bind_param("s", $_POST['psw']);
+      $stmt->bind_param("ss", $_POST['email'], $_POST['psw']);
       $stmt->execute();
       $stmt->close();
     } catch (Exception $e){
@@ -60,7 +59,8 @@
     }
     /* end of new code to work on */
   /*at this point, we can assume that the account creation was successful*/
-  $_SESSION['info message'] = "account creation was successful! (but account was not added to db yet)";
+  $_SESSION['info message'] = "account creation was successful!";
+  $_SESSION['username'] = $_POST['email'];
   header('Location: ' . 'http://www.screenplaygenerator.com');
   exit;
   ?>
