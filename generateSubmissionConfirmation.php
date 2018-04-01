@@ -46,14 +46,15 @@
         // randomly choose between narration and dialog (40/60 split)
         $sceneDeterminer = rand(0,100);
 
-        // if narration
+        /*// if narration
         if ($sceneDeterminer <= 40){
             // generate narration
             echo "<p>insert scene narration here<p>";
 
         }
         // if dialog
-        else {
+        else {*/
+        if ($sceneDeterminer >= 0){
 
             // decide who will speak
             $speakerDeterminer = rand(0, 100);
