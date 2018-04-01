@@ -41,7 +41,7 @@
     $sceneLength = rand(8,16);
 
     // for i in sceneLength
-    for ($x = 0; $x < $ceneLength; $x++) {
+    for ($x = 0; $x < $sceneLength; $x++) {
 
         // randomly choose between narration and dialog (40/60 split)
         $sceneDeterminer = rand(0,100);
@@ -90,6 +90,7 @@
             echo "</p>";
             echo "<br>";
         }
+        echo "<br>";
      }
   }
 
