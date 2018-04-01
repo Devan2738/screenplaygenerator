@@ -3,13 +3,13 @@
   require_once('header.php');
   ?>
   <div class="container">
-    <form action="generateSubmissionConfirmation.php">
+    <form action="generateSubmissionConfirmation.php" method="post">
 
-      <label for="fname">Main Character 1</label>
-      <input type="text" id="main1" name="mainCharacter" placeholder="main character 1..">
+      <label for="fname">Main Character</label>
+      <input type="text" id="main1" name="mainCharacter" value="<?php explode('@', $_SESSION['username'])[0] ?>" placeholder="main character 1..">
 
       <label for="fname"><br>Main Character 2</label>
-      <input type="text" id="main2" name="mainCharacter" placeholder="main character 2..">
+      <input type="text" id="main2" name="otherCharacter" placeholder="main character 2..">
 
       <!--<label for="year"><br>Year</label>
       <select id="length" name="length" value="2000-present">
@@ -23,7 +23,6 @@
         <option value="1">short</option>
         <option value="2">medium</option>
         <option value="3">long</option>
-        <option value="4">extra long</option>
       </select>
 
       <!--
