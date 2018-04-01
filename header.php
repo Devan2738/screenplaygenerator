@@ -13,6 +13,15 @@
             exit; // Ensures, that there is no code _after_ the redirect executed
           }
         }
+        if (!isset($_SESSION['username'])) {
+            if (!isset($_SESSION["info message"])) {
+                if ($pageName === 'contact us') {
+                  $_SESSION["info message"] = "you need an account to use the 'contact us' form";
+                  header('Location: ' . 'http://www.screenplaygenerator.com');
+                  exit; // Ensures, that there is no code _after_ the redirect execute
+                }
+            }
+        }
         echo $pageName
         ?>
     </title>
