@@ -17,14 +17,6 @@
     $initStructDeterminer = rand(0, 100);
     $output = '';
     if ($initStructDeterminer < 60){
-      $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
-      if ($result=mysqli_query($con,$sql)) {
-        while ($obj=mysqli_fetch_object($result)) {
-          $interjection = $obj->word;
-        }
-        mysqli_free_result($result);
-      }
-      $output .= ucfirst($interjection) . " ";
       $pronoun = '';
       $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
       if ($result=mysqli_query($con,$sql)) {
