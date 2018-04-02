@@ -30,6 +30,7 @@
         <div class="container">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
+            <p>We will not contact you through your email address because we don't have that functionality yet.</p>
             <p>(include a number and make sure your pasword is longer than 5 characters)</p>
             <hr>
 
