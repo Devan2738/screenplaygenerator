@@ -25,7 +25,7 @@
     echo '</p>';
 ?>
 <!--<div id="signInSignUpDiv">-->
-<div id="signUpDiv">
+<!--div id="signUpDiv"-->
     <form action="signupConfirmation.php" style="border:1px solid #ccc" method="post">
         <div class="container">
             <h1>Sign Up</h1>
@@ -52,7 +52,7 @@
             </div>
         </div>
     </form>
-</div>
+<!--/div-->
 <br>
 <?php
   require_once('footer.php');

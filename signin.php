@@ -25,7 +25,7 @@
     echo '<p>';
     echo '</p>';
 ?>
-<div id="signInDiv">
+<!--div id="signInDiv"-->
     <form action="signinConfirmation.php" method="post">
         <div class="imgcontainer">
         </div>
@@ -42,7 +42,7 @@
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>-->
     </form>
-</div>
+<!--/div-->
 <br>
 <?php
   require_once('footer.php');
