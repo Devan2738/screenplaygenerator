@@ -42,12 +42,12 @@
     }
   if (!($_POST['psw'] === $_POST['psw-repeat'])) {
     $_SESSION["email address"] = $_POST['email'];
-    $_SESSION['info message'] = "please enter the same password twices";
+    $_SESSION['info message'] = "please enter the same password twice";
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
   // HERE IS MY PHP REGEX
-  if(1 != preg_match('~.[0-9].[a-z].[A-Z]~', $_POST['psw'])){
+  if(1 != preg_match('~[0-9]~', $_POST['psw'])){
     $_SESSION["email address"] = $_POST['email'];
     $_SESSION['info message'] = "please enter a password that contains numbers";
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
