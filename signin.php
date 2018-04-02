@@ -5,12 +5,12 @@
     $order66 = 'false';
     if (isset($_SESSION['invalid email address']))
     {
-        echo '<p>you entered an invalid email address</p>';
+        echo '<p>you did not enter an email address</p>';
         $order66 = 'true';
     }
     if (isset($_SESSION['email address'])){
         echo '<p>you entered an invalid password, but a correct email</p>';
-        echo $_SESSION['email address'];
+        //echo $_SESSION['email address'];
         $email  = $_SESSION['email address'];
         $order66 = 'true';
     }
@@ -32,7 +32,7 @@
         <br>
         <div class="container">
             <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" value = "<?php echo $email ?>" name="uname" required>
+            <input type="text" placeholder="Enter email" value = "<?php echo $email ?>" name="uname" required>
 
             <label for="password"><br><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>

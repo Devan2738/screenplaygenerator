@@ -9,7 +9,7 @@
         $order66 = 'true';
     }
     if (isset($_SESSION['email address'])){
-        echo '<p> session email: ' . $_SESSION['email address'] . '</p>';
+        //echo '<p> session email: ' . $_SESSION['email address'] . '</p>';
         $email  = $_SESSION['email address'];
         $order66 = 'true';
     }
