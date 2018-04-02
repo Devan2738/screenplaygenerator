@@ -24,7 +24,7 @@
         }
         mysqli_free_result($result);
       }
-      $output .= $interjection;
+      $output .= ucfirst($interjection) . " ";
       $pronoun = '';
       $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
       if ($result=mysqli_query($con,$sql)) {
@@ -59,7 +59,7 @@
         }
         mysqli_free_result($result);
       }
-      $output .= $interjection;
+      $output .= ucfirst($interjection);
     }
     else if ($initStructDeterminer < 90) {
       $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
@@ -69,7 +69,7 @@
         }
         mysqli_free_result($result);
       }
-      $output .= $interjection;
+      $output .= ucfirst($interjection) . " ";
       $outupt .= ", ";
       $pronoun = '';
       $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
@@ -95,7 +95,7 @@
         }
         mysqli_free_result($result);
       }
-      $output .= ucfirst($pronoun) . " " . $verb . " the " . $noun;
+      $output .= $pronoun . " " . $verb . " the " . $noun;
     }
     else {
       $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
@@ -105,7 +105,7 @@
         }
         mysqli_free_result($result);
       }
-      $output .= $interjection;
+      $output .= ucfirst($interjection) . " ";
       $output .= "... ";
       $pronoun = '';
       $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
@@ -131,7 +131,7 @@
         }
         mysqli_free_result($result);
       }
-      $output .= ucfirst($pronoun) . " " . $verb . " the " . $noun;
+      $output .= $pronoun . " " . $verb . " the " . $noun;
     }
     $puncDeterminer = rand (0, 100);
     if ($puncDeterminer <= 50){
