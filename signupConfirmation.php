@@ -53,6 +53,12 @@
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
+  if(strlen($_POST['psw']) < 6){
+    $_SESSION["email address"] = $_POST['email'];
+    $_SESSION['info message'] = "please enter a password that is 6 or more characters long";
+    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+    exit; // Ensures, that there is no code _after_ the redirect executed
+  }
   /* new code to work on*/
   try{
       $stmt = $mysqli->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
