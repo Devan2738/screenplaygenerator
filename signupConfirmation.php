@@ -51,15 +51,15 @@
   $password_valid = 'true';
   if(1 != preg_match('~[0-9]+~', $_POST['psw']){
     $password_valid = 'false';
-    $_SESSION['info message'] .= "<p>please enter a password that contains numbers</p>";
+    $_SESSION['info message'] .= "password must contain numbers ";
   }
   if(1 != preg_match('~[a-z]+~', $_POST['psw']){
     $password_valid = 'false';
-    $_SESSION['info message'] .= "<p>please enter a password that contains lowercase letters</p>";
+    $_SESSION['info message'] .= "password must contain lowercase letters ";
   }
   if(1 != preg_match('~[A-Z]+~', $_POST['psw']){
     $password_valid = 'false';
-    $_SESSION['info message'] .= "<p>please enter a password that contains uppercase letters</p>";
+    $_SESSION['info message'] .= "password must contain uppercase letters ";
   }
   if($password_valid === 'false'){
     $_SESSION["email address"] = $_POST['email'];
