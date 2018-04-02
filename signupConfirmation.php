@@ -47,7 +47,7 @@
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
   // HERE IS MY PHP REGEX
-  if(1 != preg_match('~[0-9]~', $_POST['psw'])){
+  if(1 != preg_match('~[0-9][a-z]~', $_POST['psw'])){
     $_SESSION["email address"] = $_POST['email'];
     $_SESSION['info message'] = "please enter a password that contains numbers";
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
