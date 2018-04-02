@@ -29,6 +29,7 @@
   }
   function getIndependentClause($con){
     //echo "getIndependentClause was called";
+    $pronoun = '';
     $sql="SELECT word FROM words WHERE isPronoun = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
       while ($obj=mysqli_fetch_object($result)) {
@@ -36,6 +37,7 @@
       }
       mysqli_free_result($result);
     }
+    $verb = '';
     $sql="SELECT word FROM words WHERE isVerb = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
       while ($obj=mysqli_fetch_object($result)) {
@@ -43,6 +45,7 @@
       }
       mysqli_free_result($result);
     }
+    $noun = '';
     $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
       while ($obj=mysqli_fetch_object($result)) {
@@ -54,6 +57,7 @@
   }
   function getInterjection($con){
     //echo "getInterjection was called<br>";
+    $interjection = '';
     $sql="SELECT word FROM words WHERE isInterjection = 1 ORDER BY RAND() LIMIT 1";
     if ($result=mysqli_query($con,$sql)) {
       while ($obj=mysqli_fetch_object($result)) {
