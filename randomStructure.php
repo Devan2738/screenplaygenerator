@@ -15,16 +15,16 @@
     //echo "getEndPunc was called";
     $puncDeterminer = rand (0, 100);
     if ($puncDeterminer <= 50){
-      echo '.';
+      return '.';
     }
     else if ($puncDeterminer <= 70){
-      echo '!';
+      return '!';
     }
     else if ($puncDeterminer <= 90){
-      echo '?';
+      return '?';
     }
     else{
-      echo '...';
+      return '...';
     }
   }
   function getIndependentClause($con){
@@ -67,26 +67,21 @@
     //echo "getSentence was called<br>";
     $initStructDeterminer = rand(0, 100);
     if ($initStructDeterminer < 60){
-      echo getIndependentClause();
+      return getIndependentClause() . getEndPunc();
     }
     else if ($initStructDeterminer < 80){
-      echo getInterjection();
+      return getInterjection() . getEndPunc();
     }
     else if ($initStructDeterminer < 90) {
-      echo getInterjection();
-      echo ", ";
-      echo getIndependentClause();
+      return getInterjection() . ", " . getIndependentClause() . getEndPunc();
     }
     else {
-      echo getInterjection();
-      echo "... ";
-      echo getIndependentClause();
+      return getInterjection() . "... " . getIndependentClause() . getEndPunc();
     }
-    getEndPunc();
   }
   for ($x = 0; $x < 10; $x++) {
     echo "<p>";
-    getSentence($con);
+    echo getSentence($con);
     echo "</p>";
   }
   echo "<br>";
