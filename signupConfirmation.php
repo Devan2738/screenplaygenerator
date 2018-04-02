@@ -47,9 +47,22 @@
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
   // HERE IS MY PHP REGEX
-  if(1 != preg_match('~[0-9][a-z]~', $_POST['psw'])){
+  // preg_match checks for valid password format
+  $password_valid = 'true';
+  if(1 != preg_match('~[0-9]+~', $_POST['psw']){
+    $password_valid = 'false';
+    $_SESSION['info message'] .= "<p>please enter a password that contains numbers</p>";
+  }
+  if(1 != preg_match('~[a-z]+~', $_POST['psw']){
+    $password_valid = 'false';
+    $_SESSION['info message'] .= "<p>please enter a password that contains lowercase letters</p>";
+  }
+  if(1 != preg_match('~[A-Z]+~', $_POST['psw']){
+    $password_valid = 'false';
+    $_SESSION['info message'] .= "<p>please enter a password that contains uppercase letters</p>";
+  }
+  if($password_valid === 'false'){
     $_SESSION["email address"] = $_POST['email'];
-    $_SESSION['info message'] = "please enter a password that contains numbers";
     header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
     exit; // Ensures, that there is no code _after_ the redirect executed
   }
