@@ -49,15 +49,16 @@
   // HERE IS MY PHP REGEX
   // preg_match checks for valid password format
   $password_valid = 'true';
-  if(1 != preg_match('~[0-9]+~', $_POST['psw']){
+  $_SESSION['info message'] = '';
+  if(1 != preg_match('~[0-9]~', $_POST['psw']){
     $password_valid = 'false';
     $_SESSION['info message'] .= "password must contain numbers ";
   }
-  if(1 != preg_match('~[a-z]+~', $_POST['psw']){
+  if(1 != preg_match('~[a-z]~', $_POST['psw']){
     $password_valid = 'false';
     $_SESSION['info message'] .= "password must contain lowercase letters ";
   }
-  if(1 != preg_match('~[A-Z]+~', $_POST['psw']){
+  if(1 != preg_match('~[A-Z]~', $_POST['psw']){
     $password_valid = 'false';
     $_SESSION['info message'] .= "password must contain uppercase letters ";
   }
