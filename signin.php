@@ -31,7 +31,7 @@
         </div>
         <br>
         <div class="container">
-          <h2>Sign Up</h2>
+          <h2>Sign In</h2>
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Enter email" value = "<?php echo $email ?>" name="uname" required>
 
