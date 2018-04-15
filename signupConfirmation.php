@@ -12,8 +12,8 @@
 
   if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))  {
     $_SESSION["invalid email address"] = 'true';
-    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
-    exit; // Ensures, that there is no code _after_ the redirect executed
+//    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+//    exit; // Ensures, that there is no code _after_ the redirect executed
   }
   $hostname = "us-cdbr-iron-east-05.cleardb.net";
   $db = "heroku_d66a31f2e552f3e";
@@ -23,15 +23,17 @@
   if($mysqli->connect_error) {
     exit('Error connecting to database'); //Should be a message a typical user could understand in production
   }
+  $_SESSION["name exists"] = "";
   try{
       $stmt = $mysqli->prepare("SELECT email FROM users WHERE email = ?");
       $stmt->bind_param("s", $_POST['email']);
       $stmt->execute();
       $stmt->store_result();
       if($stmt->num_rows > 0) {
+          $_SESSION["name exists"] = "true";
           $_SESSION["info message"] = '<p> that username already exists! please use a different email </p>';
-          header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
-          exit;
+//          header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+//          exit;
           //exit('No rows');
       }
       $stmt->close();
@@ -41,25 +43,29 @@
       exit;
     }
   if (!($_POST['psw'] === $_POST['psw-repeat'])) {
-    $_SESSION["email address"] = $_POST['email'];
+    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+      $_SESSION["email address"] = $_POST['email'];
     $_SESSION['info message'] = "please enter the same password twice";
-    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
-    exit; // Ensures, that there is no code _after_ the redirect executed
+//    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+//    exit; // Ensures, that there is no code _after_ the redirect executed
   }
   // HERE IS MY PHP REGEX
   if(1 != preg_match('~[0-9]~', $_POST['psw'])){
-    $_SESSION["email address"] = $_POST['email'];
+    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+      $_SESSION["email address"] = $_POST['email'];
     $_SESSION['info message'] = "please enter a password that contains numbers";
-    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
-    exit; // Ensures, that there is no code _after_ the redirect executed
+//    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+//    exit; // Ensures, that there is no code _after_ the redirect executed
   }
   if(strlen($_POST['psw']) < 6){
-    $_SESSION["email address"] = $_POST['email'];
+    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+      $_SESSION["email address"] = $_POST['email'];
     $_SESSION['info message'] = "please enter a password that is 6 or more characters long";
-    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
-    exit; // Ensures, that there is no code _after_ the redirect executed
+//    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+//    exit; // Ensures, that there is no code _after_ the redirect executed
   }
   /* new code to work on*/
+  if (strlen($_POST['psw']) >= 6 and preg_match('~[0-9]~', $_POST['psw']) == 1 and ($_POST['psw'] === $_POST['psw-repeat']) and $_SESSION["name exists"] != "true" and filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) ) {
   try{
       $stmt = $mysqli->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
       $stmt->bind_param("ss", $_POST['email'], $_POST['psw']);
@@ -70,6 +76,11 @@
       header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
       exit;
     }
+  }
+  else{
+    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
+    exit; // Ensures, that there is no code _after_ the redirect executed
+  }
     /* end of new code to work on */
   /*at this point, we can assume that the account creation was successful*/
   $_SESSION['info message'] = "account creation was successful!";
