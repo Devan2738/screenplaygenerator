@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="basic.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
-    <script src="/js/my.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>
       <?php
         session_start();
@@ -27,13 +26,22 @@
         echo $pageName
         ?>
     </title>
+    <script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("h1").css({"font-size": "7vw", "color": "#007cf9"});
+    });
+    $("#btn2").click(function(){
+        $("h2").css({"font-size": "6vw", "color": "#003366"});
+    });
+});
+</script>
   </head>
   <body>
     <div id="backgroundBorder">
       <div id="onTopOfBackDiv">
         <link href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway" rel="stylesheet">
-        <h1 id="websiteName" style="font-family: 'Raleway', sans-serif;">Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
-        <script>$("#websiteName").css("border", "3px solid red" );</script>
+        <h1 id="websiteName" style="font-family: 'Raleway', sans-serif;"><span><button id="btn1">heading style one</button></span>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator<span><button id="btn2">heading style two</button></span></h1>
         <?php
 
           if (isset($_SESSION['info message']))
