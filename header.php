@@ -41,7 +41,7 @@ $(document).ready(function(){
     <div id="backgroundBorder">
       <div id="onTopOfBackDiv">
         <link href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway" rel="stylesheet">
-        <h1 id="websiteName" style="font-family: 'Raleway', sans-serif;"><span><button id="btn1" style="width:120px, color:#007cf9">heading style one</button></span>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator<span><button id="btn2" style="width:120px, color:#003366">heading style two</button></span></h1>
+        <h1 id="websiteName" style="font-family: 'Raleway', sans-serif;"><span><button id="btn1" style="width:120px; color:#007cf9;">heading style one</button></span>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator<span><button id="btn2" style="width:120px; color:#003366;">heading style two</button></span></h1>
         <?php
 
           if (isset($_SESSION['info message']))
