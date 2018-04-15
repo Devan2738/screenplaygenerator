@@ -1,11 +1,13 @@
 <?php
   $pageName = 'sign in';
   require_once('header.php');
+  $email = "";
+  $password = "";
   if (!filter_var($_POST["uname"], FILTER_VALIDATE_EMAIL))  {
     $_SESSION["invalid email address"] = 'true';
-    header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
-    exit; // Ensures, that there is no code _after_ the redirect executed
-  }
+//    header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
+//    exit; // Ensures, that there is no code _after_ the redirect executed
+}else {
     $output = '<p> (before db) username: ' . htmlspecialchars($_POST["uname"]) . '</p>';
     $output .= '<p> (before db) password: ' . htmlspecialchars($_POST["psw"]) . '</p>';
 
@@ -24,8 +26,8 @@ try{
     $stmt->store_result();
     if($stmt->num_rows === 0) {
         $_SESSION["info message"] = '<p> if you do no have an existing account, please create one </p>';
-        header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
-        exit;
+//        header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
+//        exit;
         //exit('No rows');
     }
     $stmt->bind_result($email, $password);
@@ -35,9 +37,10 @@ try{
     $stmt->close();
   } catch (Exception $e){
     $_SESSION["info message"] = '<p> if you do no have an existing account, please create one </p>';
-    header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
-    exit;
+//    header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
+//    exit;
   }
+}
     /*$conn=mysqli_connect($hostname,$user,$password,$db);
     //if (mysqli_connect_errno()) {
     //  echo "Failed to connect to MySQL: " . mysqli_connect_error()
@@ -61,7 +64,7 @@ try{
     else {
       echo 'username and password match an existing account!';
     }*/
-    if ($password === $_POST["psw"]){
+    if ($_POST["uname"] == $email and $_POST["psw"] == $password){
       //echo '$password' . $password;
       //echo '$_POST[psw]' . $_POST["psw"];
       $_SESSION['username'] = $_POST["uname"];
@@ -71,7 +74,10 @@ try{
       exit;
     }
     else {
-        $_SESSION['email address'] = $_POST["uname"];
+        if ($_POST["uname"] == $email){
+          $_SESSION['email address'] = $_POST["uname"];
+          $_SESSION["info message"] .= "you entered the wrong password";
+        }
         header('Location: ' . 'http://www.screenplaygenerator.com/signin.php');
         exit;
     }
