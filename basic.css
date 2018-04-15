@@ -43,6 +43,7 @@ h1 {
 
 .currentPage{
   list-style:none;
+  text-decoration: none;
   display:inline;
   padding: 0 1vw;
   color:white;
