@@ -42,11 +42,11 @@ h1 {
 }
 
 #currentPage{
-  color:white;
+  color:black;
   list-style:none;
   display:inline;
   padding: 0 1vw;
-  background-color: #003366;
+  background-color: #FFFFFF;
 }
 
 #commonQuestionsDiv {
