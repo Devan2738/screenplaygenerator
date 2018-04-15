@@ -24,6 +24,7 @@
     exit('Error connecting to database'); //Should be a message a typical user could understand in production
   }
   $_SESSION["name exists"] = "";
+  $_SESSION["info message"] = "";
   try{
       $stmt = $mysqli->prepare("SELECT email FROM users WHERE email = ?");
       $stmt->bind_param("s", $_POST['email']);
@@ -31,7 +32,7 @@
       $stmt->store_result();
       if($stmt->num_rows > 0) {
           $_SESSION["name exists"] = "true";
-          $_SESSION["info message"] = '<p> that username already exists! please use a different email </p>';
+          $_SESSION["info message"] .= '<p> that username already exists! please use a different email </p>';
 //          header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
 //          exit;
           //exit('No rows');
@@ -45,7 +46,7 @@
   if (!($_POST['psw'] === $_POST['psw-repeat'])) {
     if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
       $_SESSION["email address"] = $_POST['email'];
-    $_SESSION['info message'] = "please enter the same password twice";
+    $_SESSION['info message'] .= "please enter the same password twice";
 //    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
 //    exit; // Ensures, that there is no code _after_ the redirect executed
   }
@@ -53,14 +54,14 @@
   if(1 != preg_match('~[0-9]~', $_POST['psw'])){
     if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
       $_SESSION["email address"] = $_POST['email'];
-    $_SESSION['info message'] = "please enter a password that contains numbers";
+    $_SESSION['info message'] .= "please enter a password that contains numbers";
 //    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
 //    exit; // Ensures, that there is no code _after_ the redirect executed
   }
   if(strlen($_POST['psw']) < 6){
     if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
       $_SESSION["email address"] = $_POST['email'];
-    $_SESSION['info message'] = "please enter a password that is 6 or more characters long";
+    $_SESSION['info message'] .= "please enter a password that is 6 or more characters long";
 //    header('Location: ' . 'http://www.screenplaygenerator.com/signup.php');
 //    exit; // Ensures, that there is no code _after_ the redirect executed
   }
