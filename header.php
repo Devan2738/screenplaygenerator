@@ -29,7 +29,8 @@
   <body>
     <div id="backgroundBorder">
       <div id="onTopOfBackDiv">
-        <h1>Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway" rel="stylesheet">
+        <h1 style="font-family: 'Raleway', sans-serif;">Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
         <?php
 
           if (isset($_SESSION['info message']))
