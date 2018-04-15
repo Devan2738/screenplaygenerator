@@ -65,7 +65,7 @@ try{
       echo 'username and password match an existing account!';
     }*/
 //    if ($_POST["uname"] == $email and (hash("sha256", $_POST["psw"]) == $password or $_POST["psw"] == $password) ) {
-    if ($_POST["uname"] == $email and hash("sha256", $_POST["psw"]) == $password) {
+    if ($_POST["uname"] == $email and hash("sha256", $_POST["psw"] + "a23skldkfnJ83A") == $password) {
       //echo '$password' . $password;
       //echo '$_POST[psw]' . $_POST["psw"];
       $_SESSION['username'] = $_POST["uname"];

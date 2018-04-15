@@ -69,7 +69,7 @@
   if (strlen($_POST['psw']) >= 6 and preg_match('~[0-9]~', $_POST['psw']) == 1 and ($_POST['psw'] === $_POST['psw-repeat']) and $_SESSION["name exists"] != "true" and filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) ) {
   try{
       $stmt = $mysqli->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
-      $stmt->bind_param("ss", $_POST['email'], hash("sha256", $_POST['psw']));
+      $stmt->bind_param("ss", $_POST['email'], hash("sha256", $_POST['psw'] + "a23skldkfnJ83A"));
       $stmt->execute();
       $stmt->close();
     } catch (Exception $e){
