@@ -41,6 +41,11 @@ h1 {
   margin-top: 10px;
 }
 
+.currentPage{
+  color:white;
+  background-color:#003366;
+}
+
 #commonQuestionsDiv {
   text-align: left;
   font-size: 14;

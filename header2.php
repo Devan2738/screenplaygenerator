@@ -47,26 +47,15 @@
           <?php
           if (isset($_SESSION['username']))
           {
-            if ($pageNam == 'generate')
-              echo "<li class=\"currentPage\" class=\"headerLinks\"><a href=\"generate.php\">generate</a></li>";
-            else
-              echo "<li class=\"headerLinks\"><a href=\"generate.php\">generate</a></li>";
+            echo "<li class=\"headerLinks\"><a href=\"generate.php\">generate</a></li>";
           }
-          if ($pageNam == 'science')
-            echo "<li class=\"currentPage\" class=\"headerLinks\"><a href=\"science.php\">science</a></li>";
-          else
-            echo "<li class=\"headerLinks\"><a href=\"science.php\">science</a></li>";
-          if (isset($_SESSION['username'])){
+          echo "<li class=\"headerLinks\"><a href=\"science.php\">science</a></li>";
+            if (isset($_SESSION['username']))
+            {
               echo "<li class=\"headerLinks\"><a href=\"signout.php\">sign out</a></li>";
-          }
-          else {
-            if ($pageName == 'sign in')
-              echo "<li class=\"currentPage\" class=\"headerLinks\"><a href=\"signin.php\">sign in</a></li>";
-            else
+            }
+            else {
               echo "<li class=\"headerLinks\"><a href=\"signin.php\">sign in</a></li>";
-            if ($pageName == 'sign up')
-              echo "<li class=\"currentPage\" class=\"headerLinks\"><a href=\"signup.php\">sign up</a></li>";
-            else
               echo "<li class=\"headerLinks\"><a href=\"signup.php\">sign up</a></li>";
             }
           ?>
