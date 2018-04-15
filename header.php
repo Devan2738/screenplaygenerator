@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="basic.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
+    <script src="/js/my.js"></script>
     <title>
       <?php
         session_start();
@@ -30,7 +32,8 @@
     <div id="backgroundBorder">
       <div id="onTopOfBackDiv">
         <link href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway" rel="stylesheet">
-        <h1 style="font-family: 'Raleway', sans-serif;">Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
+        <h1 id="websiteName" style="font-family: 'Raleway', sans-serif;">Screenplay <span><img src="favicon.ico" width=5% text-align: center; alt=""></span> Generator</h1>
+        <script>$("#websiteName").css("border", "3px solid red" );</script>
         <?php
 
           if (isset($_SESSION['info message']))
