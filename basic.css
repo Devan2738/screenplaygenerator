@@ -1,28 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Raleway');
 
 ul {
     margin: auto;
     text-align: left;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     padding: 0px;
 }
 
 #aboutUsPage {
   text-align: left;
   font-size: 14;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 5% 5% 5% 5%;
 
 }
 
 #linksInTheHeader {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: auto;
 }
 
 #aboutUsPage > p {
   margin-bottom: 6px;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: left;
 }
 
@@ -30,14 +30,14 @@ h1 {
   font-size: 6vw;
     color: #003366;
     text-align: center;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     align-items: center;
     padding: 1vw 0px 0px 0px;
 }
 
 .headerLinks {
   list-style:none;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   display:inline;
   padding: 0 1vw;
   background-color: white;
@@ -46,7 +46,7 @@ h1 {
 .headerLinks > a {
   text-decoration: none;
   font-size: 2.5vw;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin-top: 10px;
 }
 
@@ -54,7 +54,7 @@ h1 {
   list-style:none;
   text-decoration: none;
   display:inline;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 0 1vw;
   color:white;
   background-color:#003366;
@@ -62,7 +62,7 @@ h1 {
 
 #commonQuestionsDiv {
   text-align: left;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 14;
   margin: 5% 5% 5% 5%;
 
@@ -70,14 +70,14 @@ h1 {
 
 #commonQuestionsDiv > p {
   margin-bottom: 6px;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: left;
 }
 
 #scienceDiv {
   text-align: left;
   font-size: 14;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 5% 5% 5% 5%;
 
 }
@@ -85,12 +85,12 @@ h1 {
 #scienceDiv > p {
   margin-bottom: 6px;
   text-align: left;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 a:visited {
   text-decoration: none;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #003366;
 }
 
@@ -99,26 +99,26 @@ a:visited {
   list-style:none;
   display:inline;
   padding: 0 8px;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: auto;
 }
 
 p {
   color: #003366;
   text-align: center;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 3px 0px;
 }
 
 body {
   margin: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 #careerBody {
   margin: 48px 0px;
   font-size: 36px;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 #contactFormDiv {
@@ -129,7 +129,7 @@ body {
   margin: auto;
   padding: auto;
   font-size: 15px;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   bottom: 0px;
   position: absolute;
 }
@@ -154,7 +154,7 @@ body {
 
 #signInDiv, #signUpDiv {
   float: center;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin-right: 5px;
 }
 
