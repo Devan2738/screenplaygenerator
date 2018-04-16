@@ -20,6 +20,7 @@
   </div>
 </div>
 -->
+<p><b>Contact Us Page</b></p><br>
 <p>heroko doesn't natively support emailing from php</p>
 <p>we will be working on an add-on or work around soon!</p>
 <br>
