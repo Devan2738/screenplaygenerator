@@ -28,7 +28,7 @@
 <!--div id="signUpDiv"-->
     <form action="signupConfirmation.php" style="border:1px solid #ccc" method="post">
         <div class="container">
-            <h2>Sign Up Page</h2>
+          <p><b>You are on the Sign Up Page</b></p><br>
             <p>Please fill in this form to create an account.</p>
             <p>We don't have the functionality yet to contact you through email addresses provided.</p>
             <p>(include a number and make sure your pasword is longer than 5 characters)</p>

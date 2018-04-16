@@ -43,7 +43,7 @@ h1 {
   margin-top: 10px;
 }
 
-.currentPage{
+.currentPage > a{
   list-style:none;
   text-decoration: none;
   display:inline;
