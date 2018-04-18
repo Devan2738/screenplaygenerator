@@ -105,9 +105,6 @@
                 }
                 mysqli_free_result($result);
               }
-              if (rand(0, 100) > 60) {
-                $verb = 'will ' + $verb;
-              }
               #$noun = ''; #commented
               if ($x == 0 or rand(0, 100) > 33){ #new
                 $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
@@ -156,9 +153,6 @@
                 }
                 mysqli_free_result($result);
               }
-              if (rand(0, 100) > 60) {
-                $verb = 'will ' + $verb;
-              }
               #$noun = ''; #commented
               if ($x == 0 or rand(0, 100) > 33){ #new
                 $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
@@ -196,9 +190,6 @@
                   $verb = $obj->word;
                 }
                 mysqli_free_result($result);
-              }
-              if (rand(0, 100) > 60) {
-                $verb = 'will ' + $verb;
               }
               #$noun = ''; #commented
               if ($x == 0 or rand(0, 100) > 33){ #new
