@@ -151,13 +151,15 @@
                 }
                 mysqli_free_result($result);
               }
-              $noun = '';
-              $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
-              if ($result=mysqli_query($con,$sql)) {
-                while ($obj=mysqli_fetch_object($result)) {
-                  $noun = $obj->word;
-                }
-                mysqli_free_result($result);
+              #$noun = ''; #commented
+              if ($y == 0 or rand(0, 100) > 40){ #new
+                $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
+                if ($result=mysqli_query($con,$sql)) {
+                  while ($obj=mysqli_fetch_object($result)) {
+                    $noun = $obj->word;
+                  }
+                  mysqli_free_result($result);
+                } #new
               }
               $output .= $pronoun . " " . $verb . " the " . $noun;
             }
