@@ -33,21 +33,21 @@ h1 {
 .headerLinks {
   list-style:none;
   display:inline;
-  padding: 0 1vw;
+  padding: .7vw 1vw .3vw 1vw ;
   background-color: white;
 }
 
 .headerLinks > a {
   text-decoration: none;
   font-size: 2.5vw;
-  margin-top: 10px;
 }
 
-.currentPage > a{
+.currentPage {
   list-style:none;
   text-decoration: none;
   display:inline;
   padding: 0 1vw;
+  font-size: 2.5vw;
   color:#003366;
   background-color:white;
 }
