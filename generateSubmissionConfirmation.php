@@ -105,15 +105,13 @@
                 }
                 mysqli_free_result($result);
               }
-              #$noun = ''; #commented
-              if ($x == 0 or rand(0, 100) > 33){ #new
-                $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
-                if ($result=mysqli_query($con,$sql)) {
-                  while ($obj=mysqli_fetch_object($result)) {
-                    $noun = $obj->word;
-                  }
-                  mysqli_free_result($result);
-                } #new
+              $noun = '';
+              $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
+              if ($result=mysqli_query($con,$sql)) {
+                while ($obj=mysqli_fetch_object($result)) {
+                  $noun = $obj->word;
+                }
+                mysqli_free_result($result);
               }
               $output .= ucfirst($pronoun) . " " . $verb . " the " . $noun;
             }
@@ -153,15 +151,13 @@
                 }
                 mysqli_free_result($result);
               }
-              #$noun = ''; #commented
-              if ($x == 0 or rand(0, 100) > 33){ #new
-                $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
-                if ($result=mysqli_query($con,$sql)) {
-                  while ($obj=mysqli_fetch_object($result)) {
-                    $noun = $obj->word;
-                  }
-                  mysqli_free_result($result);
-                } #new
+              $noun = '';
+              $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
+              if ($result=mysqli_query($con,$sql)) {
+                while ($obj=mysqli_fetch_object($result)) {
+                  $noun = $obj->word;
+                }
+                mysqli_free_result($result);
               }
               $output .= $pronoun . " " . $verb . " the " . $noun;
             }
@@ -191,15 +187,13 @@
                 }
                 mysqli_free_result($result);
               }
-              #$noun = ''; #commented
-              if ($x == 0 or rand(0, 100) > 33){ #new
-                $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
-                if ($result=mysqli_query($con,$sql)) {
-                  while ($obj=mysqli_fetch_object($result)) {
-                    $noun = $obj->word;
-                  }
-                  mysqli_free_result($result);
-                } #new
+              $noun = '';
+              $sql="SELECT word FROM words WHERE isNoun = 1 ORDER BY RAND() LIMIT 1";
+              if ($result=mysqli_query($con,$sql)) {
+                while ($obj=mysqli_fetch_object($result)) {
+                  $noun = $obj->word;
+                }
+                mysqli_free_result($result);
               }
               $output .= $pronoun . " " . $verb . " the " . $noun;
             }
