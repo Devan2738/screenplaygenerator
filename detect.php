@@ -5,10 +5,11 @@
   <div id="scienceDiv">
     <p>This is the device detection page.</p><br>
       <?php
-        $detect = new Mobile_Detect;
         // Include and instantiate the class.
         require_once "Mobile-Detect-2.8.31/Mobile_Detect.php";
         $detect = new Mobile_Detect;
+
+        echo "<p>hey I'm actually printing something here</p>";
 
         // Any mobile device (phones or tablets).
         if ( $detect->isMobile() ) {
