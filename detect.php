@@ -9,8 +9,6 @@
         require_once "Mobile-Detect-2.8.31/Mobile_Detect.php";
         $detect = new Mobile_Detect;
 
-        echo "<p>hey I'm actually printing something here</p>";
-
         // Any mobile device (phones or tablets).
         if ( $detect->isMobile() ) {
           echo "<p>you are on a mobile device</p>";
