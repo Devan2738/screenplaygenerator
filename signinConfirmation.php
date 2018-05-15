@@ -68,7 +68,7 @@ try{
     if ($_POST["uname"] == $email and hash("sha256", $_POST["psw"] + "a23skldkfnJ83A") == $password) {
       //echo '$password' . $password;
       //echo '$_POST[psw]' . $_POST["psw"];
-      $_SESSION['username'] = $_POST["uname"];
+      $_SESSION['username'] = htmlspecialchars($_POST["uname"]);
       $output .= "<p>username and password match an existing account</p>";
       $_SESSION['info message'] = "log in was successful!";
       header('Location: ' . 'http://www.screenplaygenerator.com');

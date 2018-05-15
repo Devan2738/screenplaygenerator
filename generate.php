@@ -3,6 +3,7 @@
   require_once('header.php');
   ?>
   <div class="container">
+    <p><b>You are on the Generate Page</b></p><br>
     <form action="generateSubmissionConfirmation.php" method="post">
 
       <label for="fname">Main Character</label>
