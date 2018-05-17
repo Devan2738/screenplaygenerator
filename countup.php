@@ -27,8 +27,9 @@
       upTime.to=setTimeout(function(){ upTime(countTo); },1000);
     }
   </script>
-  <div id="bottomCounterDiv">Murie design group has been in business for: </p><br>
+  <div id="bottomCounterDiv"><br>
     <div id="countup">
+      <span>Murie design group has been in business for: </span>
       <span id="years">00</span>
       <span class="timeRefYears"> years </span>
       <span id="days">00</span>

@@ -139,6 +139,9 @@ body {
 }
 
 #bottomCounterDiv{
+    background-color: #003366;
+    color: #e7ebf0;
+    width: available;
     position: fixed;
     bottom: 0px;
     width: 80%;
