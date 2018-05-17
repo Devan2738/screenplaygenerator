@@ -5,7 +5,7 @@
   <script>
     window.onload=function() {
       // Month,Day,Year,Hour,Minute,Second
-      upTime('nov,01,1988,08:00:00'); // ****** Change this line!
+      upTime('nov,01,1988,08:00:00');
     };
     function upTime(countTo) {
       now = new Date();
@@ -27,7 +27,7 @@
       upTime.to=setTimeout(function(){ upTime(countTo); },1000);
     }
   </script>
-  <div id="scienceDiv">Murie design group has been in business for: </p><br>
+  <div id="bottomCounterDiv">Murie design group has been in business for: </p><br>
     <div id="countup">
       <span id="years">00</span>
       <span class="timeRefYears"> years </span>
