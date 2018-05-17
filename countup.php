@@ -5,7 +5,7 @@
   <script>
     window.onload=function() {
       // Month,Day,Year,Hour,Minute,Second
-      upTime('jan,01,1988,00:00:00'); // ****** Change this line!
+      upTime('nov,01,1988,08:00:00'); // ****** Change this line!
     };
     function upTime(countTo) {
       now = new Date();
